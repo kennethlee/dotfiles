@@ -1,0 +1,18 @@
+
+# vi ###########################################################################
+
+set editing-mode vi
+
+# Normal Mode ##################################################################
+
+set keymap vi-command
+
+# Insert Mode ##################################################################
+
+set keymap vi-insert
+
+# Tab completion ignores case
+set completion-ignore-case on
+
+# Show all completions as soon as I press tab, even if there's more than one
+set show-all-if-ambiguous on

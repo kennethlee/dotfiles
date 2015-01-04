@@ -1,0 +1,11 @@
+*
+!/.gitignore.d
+!/.gitignore.d/dotfiles
+!/.agignore
+!/.bash_profile
+!/.bashrc
+!/.gitconfig
+!/.gitignore_global
+!/.inputrc
+!/.jshintrc
+!/.profile
