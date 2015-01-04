@@ -1,0 +1,4 @@
+
+# Suppress the ri and rdoc documentation
+install: --no-rdoc --no-ri
+update:  --no-rdoc --no-ri
