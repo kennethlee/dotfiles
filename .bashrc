@@ -2,8 +2,8 @@
 # Aliases ######################################################################
 
 # Aliases for Neovim
-# alias vi=nvim
-# alias vim=nvim
+alias vi=nvim
+alias vim=nvim
 
 # Sourcing #####################################################################
 
