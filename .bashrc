@@ -1,8 +1,11 @@
 # Aliases ######################################################################
 
-# Aliases for Neovim
+# Neovim
 alias vi=nvim
 alias vim=nvim
+
+# fzf
+alias fz=fzf
 
 # Sourcing #####################################################################
 
