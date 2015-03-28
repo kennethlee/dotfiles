@@ -60,4 +60,18 @@ cdf() {
    file=$(fzf +m -q "$1") && dir=$(dirname "$file") && cd "$dir"
 }
 
+# fshow - git commit browser
+fshow() {
+  local out sha q
+  while out=$(
+      git log --graph --color=always \
+          --format="%C(auto)%h%d %s %C(black)%C(bold)%cr" |
+      fzf --ansi --multi --no-sort --reverse --query="$q" --print-query); do
+    q=$(head -1 <<< "$out")
+    while read sha; do
+      [ -n "$sha" ] && git show --color=always $sha | less -R
+    done < <(sed '1d;s/^[^a-z0-9]*//;/^$/d' <<< "$out" | awk '{print $1}')
+  done
+}
+
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
