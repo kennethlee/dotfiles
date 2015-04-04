@@ -7,6 +7,9 @@ alias vim=nvim
 # fzf
 alias fz=fzf
 
+# tree
+alias tree="tree -C"
+
 # Sourcing #####################################################################
 
 # Git
@@ -21,10 +24,6 @@ source /usr/local/share/chruby/chruby.sh
 # different projects
 source /usr/local/share/chruby/chruby.sh
 source /usr/local/share/chruby/auto.sh
-
-# Neovim-related ###############################################################
-
-$NVIM_TUI_ENABLE_TRUE_COLOR
 
 # Heroku #######################################################################
 
@@ -54,10 +53,17 @@ fd() {
 }
 
 # cdf - cd into the directory of the selected file
-cdf() {
+fdf() {
    local file
    local dir
    file=$(fzf +m -q "$1") && dir=$(dirname "$file") && cd "$dir"
+}
+
+fel () {
+  grep --line-buffered --color=never -r "" * | fzf
+        # local file
+        # file=$(grep --line-buffered --color=never -r "" * | fzf --query="$1" --select-1 --exit-0) 
+        # [ -n "$file" ] && ${EDITOR:-nvim} "$file"
 }
 
 # fshow - git commit browser
