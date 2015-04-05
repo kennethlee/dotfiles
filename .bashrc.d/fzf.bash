@@ -1,7 +1,9 @@
-# fzf ##########################################################################
+# settings #####################################################################
 
 # Set ag as default source for fzf
 export FZF_DEFAULT_COMMAND='ag -l -g ""'
+
+# general ######################################################################
 
 # fe [FUZZY PATTERN] - Open the selected file with the default editor
 #   - Bypass fuzzy finder if there's only one match (--select-1)
@@ -20,19 +22,7 @@ fd() {
   cd "$dir"
 }
 
-# cdf - cd into the directory of the selected file
-fdf() {
-   local file
-   local dir
-   file=$(fzf +m -q "$1") && dir=$(dirname "$file") && cd "$dir"
-}
-
-fel () {
-  grep --line-buffered --color=never -r "" * | fzf
-        # local file
-        # file=$(grep --line-buffered --color=never -r "" * | fzf --query="$1" --select-1 --exit-0) 
-        # [ -n "$file" ] && ${EDITOR:-nvim} "$file"
-}
+# git ##########################################################################
 
 # fshow - git commit browser
 fshow() {
@@ -47,5 +37,16 @@ fshow() {
     done < <(sed '1d;s/^[^a-z0-9]*//;/^$/d' <<< "$out" | awk '{print $1}')
   done
 }
+
+# media ########################################################################
+
+# fp - play song
+fp() {
+  local file
+  file=$(fzf --query="$1" --select-1 --exit-0)
+  [ -n "$file" ] && afplay "$file"
+}
+
+# misc. ########################################################################
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
