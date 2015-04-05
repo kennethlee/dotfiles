@@ -10,3 +10,6 @@
 !/.inputrc
 !/.jshintrc
 !/.profile
+!/.bashrc.d
+!/.bashrc.d/aliases.bash
+!/.bashrc.d/fzf.bash
