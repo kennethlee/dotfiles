@@ -14,18 +14,33 @@ fe() {
   [ -n "$file" ] && ${EDITOR:-nvim} "$file"
 }
 
-# fd - cd to selected directory
+# fd - cd to dir of selected file
 fd() {
-  local dir
-  dir=$(find ${1:-*} -path '*/\.*' -prune \
-                  -o -type d -print 2> /dev/null | fzf +m) &&
-  cd "$dir"
+   local file
+   local dir
+   file=$(fzf +m -q "$1") && dir=$(dirname "$file") && cd "$dir"
 }
 
 # git ##########################################################################
 
-# fshow - git commit browser
-fshow() {
+# fb - checkout git branch
+fb() {
+  local branches branch
+  branches=$(git branch) &&
+  branch=$(echo "$branches" | fzf +m) &&
+  git checkout $(echo "$branch" | sed "s/.* //")
+}
+
+# fco - checkout git commit
+fco() {
+  local commits commit
+  commits=$(git log --pretty=oneline --abbrev-commit --reverse) &&
+  commit=$(echo "$commits" | fzf --tac +s +m -e) &&
+  git checkout $(echo "$commit" | sed "s/ .*//")
+}
+
+# fist - git commit browser
+fist() {
   local out sha q
   while out=$(
       git log --graph --color=always \
