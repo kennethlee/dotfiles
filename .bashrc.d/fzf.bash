@@ -1,7 +1,10 @@
 # settings #####################################################################
 
-# Set ag as default source for fzf
+# set ag as default source for fzf
 export FZF_DEFAULT_COMMAND='ag -l -g ""'
+
+# extended mode as default
+export FZF_DEFAULT_OPTS="-x"
 
 # general ######################################################################
 
