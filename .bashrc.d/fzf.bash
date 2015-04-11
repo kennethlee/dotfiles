@@ -64,7 +64,3 @@ fp() {
   file=$(fzf --query="$1" --select-1 --exit-0)
   [ -n "$file" ] && afplay "$file"
 }
-
-# misc. ########################################################################
-
-[ -f ~/.fzf.bash ] && source ~/.fzf.bash
