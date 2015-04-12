@@ -19,12 +19,10 @@ TERM=xterm-256color
 NVIM_TUI_ENABLE_TRUE_COLOR=1
 
 # Base16 Shell
-BASE16_SHELL="$HOME/.base16-shell/base16-eighties.dark.sh"
-# BASE16_SHELL="$HOME/.base16-shell/base16-monokai.dark.sh"
-# BASE16_SHELL="$HOME/.base16-shell/base16-ocean.dark.sh"
-# BASE16_SHELL="$HOME/.base16-shell/base16-railscasts.dark.sh"
-# BASE16_SHELL="$HOME/.base16-shell/base16-tomorrow.dark.sh"
-# BASE16_SHELL="$HOME/.base16-shell/base16-twilight.dark.sh"
+# favorites: eighties, monokai, ocean, railscasts, tomorrow, twilight
+BASE16_SCHEME="eighties"
+BASE16_SHELL="$HOME/.base16-shell/base16-$BASE16_SCHEME.dark.sh"
+# BASE16_SHELL="$HOME/.base16-shell/base16-$BASE16_SCHEME.light.sh"
 [[ -s $BASE16_SHELL ]] && source $BASE16_SHELL
 
 # heroku #######################################################################
