@@ -1,12 +1,15 @@
-# Aliases ######################################################################
+# aliases ======================================================================
 
-# Neovim
+# neovim
 alias vi=nvim
 alias vim=nvim
 
 # fzf
 alias fz=fzf
 
-# Colorize by default
+# colorize by default
 alias tree="tree -C"
 alias ls="ls -G"
+
+# ==============================================================================
+

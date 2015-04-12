@@ -1,12 +1,11 @@
-# sourcing #####################################################################
+# sourcing =====================================================================
 
 # git
 source ~/.git-completion.sh
 source ~/.git-prompt.sh
 source ~/.bash_prompt
 
-# load any supplementary scripts
-
+# load any supplementary config
 for config in "$HOME"/.bashrc.d/*.bash ; do
     source "$config"
 done
@@ -20,7 +19,7 @@ source /usr/local/share/chruby/chruby.sh
 source /usr/local/share/chruby/chruby.sh
 source /usr/local/share/chruby/auto.sh
 
-# color ########################################################################
+# color ========================================================================
 
 TERM=xterm-256color
 NVIM_TUI_ENABLE_TRUE_COLOR=1
@@ -33,11 +32,14 @@ BASE16_VARIANT="dark"
 BASE16_SHELL="$HOME/.base16-shell/base16-$BASE16_SCHEME.$BASE16_VARIANT.sh"
 [[ -s $BASE16_SHELL ]] && source $BASE16_SHELL
 
-# heroku #######################################################################
+# heroku =======================================================================
 
 ### added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
 
-# fzf ##########################################################################
+# fzf ==========================================================================
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
+
+# ==============================================================================
+

@@ -1,4 +1,4 @@
-# settings #####################################################################
+# settings =====================================================================
 
 # set ag as default source for fzf
 export FZF_DEFAULT_COMMAND='ag -l -g ""'
@@ -6,7 +6,7 @@ export FZF_DEFAULT_COMMAND='ag -l -g ""'
 # extended mode as default
 export FZF_DEFAULT_OPTS="-x"
 
-# general ######################################################################
+# general ======================================================================
 
 # fe [FUZZY PATTERN] - Open the selected file with the default editor
 #   - Bypass fuzzy finder if there's only one match (--select-1)
@@ -24,7 +24,7 @@ fd() {
    file=$(fzf +m -q "$1") && dir=$(dirname "$file") && cd "$dir"
 }
 
-# git ##########################################################################
+# git ==========================================================================
 
 # fb - checkout git branch
 fb() {
@@ -56,7 +56,7 @@ fist() {
   done
 }
 
-# media ########################################################################
+# media ========================================================================
 
 # fp - play song
 fp() {
@@ -64,3 +64,6 @@ fp() {
   file=$(fzf --query="$1" --select-1 --exit-0)
   [ -n "$file" ] && afplay "$file"
 }
+
+# ==============================================================================
+
