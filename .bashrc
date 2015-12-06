@@ -17,19 +17,38 @@ source /usr/local/share/chruby/auto.sh
 # ==============================================================================
 # aliases {{{1
 
+# navigation
+alias ..='cd ..'
+alias ...='cd ../..'
+alias ....='cd ../../..'
+
+# files/dir
+alias md='mkdir -p'
+
 # nvim
-alias vi=nvim
-alias vim=nvim
+alias v='nvim'
+alias vi='nvim'
+alias vim='nvim'
 
 # fzf
-alias fz=fzf
+alias fz='fzf'
+
+# rails/bundler
+alias r='rails'
+alias be='bundle exec'
+alias bi='bundle install'
+alias bu='bundle update'
+alias dbc='rake db:create'
+alias dbm='rake db:migrate'
+alias dbs='rake db:seed'
+alias dbd='rake db:drop'
 
 # tree: colorize by default
-alias tree="tree -C"
-alias ls="ls -G"
+alias tree='tree -C'
+alias ls='ls -G'
 
 # kill all background processes
-alias crumb="jobs -p | xargs kill -15"
+alias crumb='jobs -p | xargs kill -15'
 
 # ==============================================================================
 # fzf {{{1
@@ -39,7 +58,7 @@ alias crumb="jobs -p | xargs kill -15"
 export FZF_DEFAULT_COMMAND='ag -l -g ""'
 
 # extended mode as default
-export FZF_DEFAULT_OPTS="-x"
+export FZF_DEFAULT_OPTS='-x'
 
 # ==============================================================================
 # general {{{2
@@ -55,9 +74,9 @@ fe() {
 
 # fd - cd to dir of selected file
 fd() {
-   local file
-   local dir
-   file=$(fzf +m -q "$1") && dir=$(dirname "$file") && cd "$dir"
+  local file
+  local dir
+  file=$(fzf +m -q "$1") && dir=$(dirname "$file") && cd "$dir"
 }
 
 # ==============================================================================
@@ -83,9 +102,9 @@ fco() {
 fist() {
   local out sha q
   while out=$(
-      git log --graph --color=always \
-          --format="%C(auto)%h%d %s %C(black)%C(bold)%cr" |
-      fzf --ansi --multi --no-sort --reverse --query="$q" --print-query); do
+    git log --graph --color=always \
+      --format="%C(auto)%h%d %s %C(black)%C(bold)%cr" |
+    fzf --ansi --multi --no-sort --reverse --query="$q" --print-query); do
     q=$(head -1 <<< "$out")
     while read sha; do
       [ -n "$sha" ] && git show --color=always $sha | less -R
