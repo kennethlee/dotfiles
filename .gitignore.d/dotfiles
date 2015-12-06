@@ -8,5 +8,5 @@
 !/.gitconfig
 !/.gitignore_global
 !/.inputrc
-!/.jshintrc
+!/.eslintrc
 !/.profile
