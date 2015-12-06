@@ -1,7 +1,5 @@
-# ==============================================================================
 # github .gitignore
 # https://gist.github.com/octocat/9257657
-# ==============================================================================
 
 # compiled source
 *.com
@@ -49,7 +47,6 @@ Thumbs.db
 # ==============================================================================
 # ruby. taken from github's gitignore:
 # https://github.com/github/gitignore/blob/master/Ruby.gitignore
-# ==============================================================================
 
 *.gem
 *.rbc
@@ -91,7 +88,6 @@ build/
 # ==============================================================================
 # rails. taken from github's gitignore:
 # https://github.com/github/gitignore/blob/master/Rails.gitignore
-# ==============================================================================
 
 *.rbc
 capybara-*.html

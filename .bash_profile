@@ -1,12 +1,17 @@
-# general ======================================================================
+# general {{{1
 
 source ~/.bashrc
 
-# git tab completion (homebrew)
+# git completion (brew)
 if [ -f $(brew --prefix)/etc/bash_completion ]; then
     . $(brew --prefix)/etc/bash_completion
 fi
 
-# default ruby =================================================================
+# ==============================================================================
+# chruby {{{1
 
+# set default ruby
 chruby ruby-2.2.2
+
+# ==============================================================================
+" }}}1
