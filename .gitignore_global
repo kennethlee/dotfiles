@@ -34,7 +34,6 @@
 ._*
 *.bak
 *.swp
-database.yml
 doc/
 .project
 .DS_Store
