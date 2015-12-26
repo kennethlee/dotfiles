@@ -31,10 +31,11 @@ alias vi='nvim'
 alias vim='nvim'
 
 # laziness: wholesale update of vim plugins
-alias infection_update='for i in ~/.config/nvim/bundle/*; do git -C $i pull; done'
+alias ud_pathogen='for i in ~/.config/nvim/bundle/*; do git -C $i pull; done'
 
 # fzf
 alias fz='fzf'
+alias ud_fz='cd ~/.fzf && git pull && ./install && cd -'
 
 # rails/bundler
 alias r='rails'
