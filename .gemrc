@@ -1,8 +1,7 @@
+# ==============================================================================
 
-# suppress the ri and rdoc documentation =======================================
-
-install: --no-rdoc --no-ri
-update:  --no-rdoc --no-ri
+# suppress the ri and rdoc documentation
+gem: --no-rdoc --no-ri
 
 # ==============================================================================
 
