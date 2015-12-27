@@ -1,4 +1,4 @@
-# sourcing {{{1
+# sourcing
 
 # sexy prompt
 source ~/.bash_prompt
@@ -15,7 +15,7 @@ source /usr/local/share/chruby/auto.sh
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
 # ==============================================================================
-# aliases {{{1
+# aliases
 
 # navigation
 alias ..='cd ..'
@@ -55,8 +55,8 @@ alias ls='ls -G'
 alias crumb='jobs -p | xargs kill -15'
 
 # ==============================================================================
-# fzf {{{1
-# setup {{{2
+# fzf
+# setup
 
 # set ag as default source for fzf
 export FZF_DEFAULT_COMMAND='ag -l -g ""'
@@ -65,7 +65,7 @@ export FZF_DEFAULT_COMMAND='ag -l -g ""'
 export FZF_DEFAULT_OPTS='-x'
 
 # ==============================================================================
-# general {{{2
+# general
 
 # fe [FUZZY PATTERN] - Open the selected file with the default editor
 #   - Bypass fuzzy finder if there's only one match (--select-1)
@@ -84,7 +84,7 @@ fd() {
 }
 
 # ==============================================================================
-# git {{{2
+# git
 
 # fb - checkout git branch
 fb() {
@@ -117,7 +117,7 @@ fist() {
 }
 
 # ==============================================================================
-# media {{{2
+# media
 
 # fp - play song
 fp() {
@@ -127,7 +127,7 @@ fp() {
 }
 
 # ==============================================================================
-# color {{{1
+# color
 
 export NVIM_TUI_ENABLE_TRUE_COLOR=1
 
