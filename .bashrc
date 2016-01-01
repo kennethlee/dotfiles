@@ -51,6 +51,8 @@ alias dbd='rake db:drop'
 alias tree='tree -C'
 alias ls='ls -G'
 
+alias pserv='python -m SimpleHTTPServer 8000'
+
 # kill all background processes
 alias crumb='jobs -p | xargs kill -15'
 
