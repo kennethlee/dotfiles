@@ -5,8 +5,8 @@
 [core]
   autocrlf = input
   safecrlf = true
-  editor = vim
-	excludesfile = ~/.gitignore_global
+  editor = "NVIM_TUI_ENABLE_TRUE_COLOR=1 nvim"
+  excludesfile = ~/.gitignore_global
 
 [alias]
   co = checkout
