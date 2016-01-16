@@ -1,13 +1,18 @@
 {
   "extends": {
     "idiomatic"
-    },
+  },
+  "env": {
+    "browser": true,
+    "node": true
+  },
   "plugins": [
     "react"
   ],
   "parserOptions": {
     "ecmaFeatures": {
-      "jsx": true
+      "jsx": true,
+      "modules": true
     }
   }
 }
