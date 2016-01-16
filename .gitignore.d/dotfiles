@@ -8,6 +8,5 @@
 !/.gitconfig
 !/.gitignore_global
 !/.inputrc
-!/.eslintrc
+!/.eslintrc.json
 !/.profile
-
