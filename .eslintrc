@@ -1,2 +1,14 @@
-extends: 'idiomatic'
+{
+  "extends": {
+    "idiomatic"
+    },
+  "plugins": [
+    "react"
+  ],
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  }
+}
 
