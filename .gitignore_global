@@ -26,8 +26,6 @@
 /log/*.log
 /tmp
 *.log
-*.sql
-*.sqlite
 
 # ignore other unneeded files
 *~
