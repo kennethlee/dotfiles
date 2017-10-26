@@ -60,8 +60,10 @@ alias crumb='jobs -p | xargs kill -15'
 # fzf
 # setup
 
-# set ag as default source for fzf
-export FZF_DEFAULT_COMMAND='ag -l -g ""'
+# set rg as default source for fzf
+# ignores *.git files
+# follow symlinks
+export FZF_DEFAULT_COMMAND='rg --files --hidden --follow --glob "!.git/*"'
 
 # extended mode as default
 export FZF_DEFAULT_OPTS='-x'
