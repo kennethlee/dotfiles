@@ -1,12 +1,12 @@
 *
 !/.gitignore.d/
 !/.gitignore.d/dotfiles
-!/.agignore
 !/.bash_profile
 !/.bashrc
 !/.gemrc
 !/.gitconfig
 !/.gitignore_global
+!/.ignore
 !/.inputrc
 !/.eslintrc.js
 !/.profile
