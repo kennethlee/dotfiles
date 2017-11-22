@@ -31,7 +31,8 @@ alias vi='nvim'
 alias vim='nvim'
 
 # laziness: wholesale update of vim plugins
-alias ud_pathogen='for i in ~/.config/nvim/bundle/*; do git -C $i pull; done'
+alias ud_packs='for i in ~/.config/nvim/pack/bundle/start/*; do git -C $i pull; done'
+alias ud_packo='for i in ~/.config/nvim/pack/bundle/opt/*; do git -C $i pull; done'
 
 # fzf
 alias fz='fzf'
