@@ -26,3 +26,5 @@
 [color]
   ui = auto
 
+[commit]
+  verbose = true
