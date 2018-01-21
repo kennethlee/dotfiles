@@ -10,3 +10,8 @@
 !/.inputrc
 !/.eslintrc.js
 !/.profile
+
+!/.config/
+!/.config/alacritty
+!/.config/alacritty/alacritty.yml
+
