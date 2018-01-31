@@ -100,11 +100,7 @@ colors:
     blue:     '0x5fafff'
     magenta:  '0xd7afff'
     cyan:     '0x5fafaf'
-<<<<<<< HEAD
     white:    '0x949494'
-=======
-    white:    '0x808080'
->>>>>>> 0496616a5b97cbccf6d37cb7363f5418859c9ddf
   bright:
     black:    '0x6c6c6c'
     red:      '0xffd787'
@@ -113,11 +109,7 @@ colors:
     blue:     '0x5fd7ff'
     magenta:  '0xd7d7ff'
     cyan:     '0xafd7d7'
-<<<<<<< HEAD
     white:    '0x949494'
-=======
-    white:    '0x808080'
->>>>>>> 0496616a5b97cbccf6d37cb7363f5418859c9ddf
 
 # Base16 Eighties 256 - alacritty color config
 # Chris Kempson (http://chriskempson.com)
