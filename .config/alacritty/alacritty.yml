@@ -51,7 +51,7 @@ font:
   italic:
     family: Iosevka
     # Style can be specified to pick a specific face.
-    # style: italic
+    style: italic
 
   # Point size of the font
   size: 14.0
@@ -84,40 +84,60 @@ render_timer: false
 # and cursor.background colors, otherwise invert the colors of the cursor.
 custom_cursor_colors: true
 
+# acme
+colors:
+  primary:
+    background: '0xffffaf'
+    foreground: '0x080808'
+  cursor:
+    text:     '0x080808'
+    cursor:   '0x5fafff'
+  normal:
+    black:    '0x080808'
+    red:      '0xff5f87'
+    green:    '0x87d787'
+    yellow:   '0xffffaf'
+    blue:     '0x5fafff'
+    magenta:  '0xd7afff'
+    cyan:     '0x5fafaf'
+    white:    '0x808080'
+  bright:
+    black:    '0x6c6c6c'
+    red:      '0xffd787'
+    green:    '0xd7ffaf'
+    yellow:   '0xffff00'
+    blue:     '0x5fd7ff'
+    magenta:  '0xd7d7ff'
+    cyan:     '0xafd7d7'
+    white:    '0x808080'
+
 # Base16 Eighties 256 - alacritty color config
 # Chris Kempson (http://chriskempson.com)
-colors:
-  # Default colors
-  primary:
-    background: '0x2d2d2d'
-    foreground: '0xd3d0c8'
-
-  # Colors the cursor will use if `custom_cursor_colors` is true
-  cursor:
-    text: '0x2d2d2d'
-    cursor: '0xf2777a'
-
-  # Normal colors
-  normal:
-    black:   '0x2d2d2d'
-    red:     '0xf2777a'
-    green:   '0x99cc99'
-    yellow:  '0xffcc66'
-    blue:    '0x6699cc'
-    magenta: '0xcc99cc'
-    cyan:    '0x66cccc'
-    white:   '0xd3d0c8'
-
-  # Bright colors
-  bright:
-    black:   '0x747369'
-    red:     '0xf2777a'
-    green:   '0x99cc99'
-    yellow:  '0xffcc66'
-    blue:    '0x6699cc'
-    magenta: '0xcc99cc'
-    cyan:    '0x66cccc'
-    white: '0xd3d0c8'
+# colors:
+  # primary:
+  #   background: '0xffffaf'
+  #   foreground: '0xd3d0c8'
+  # cursor:
+    # text:     '0x2d2d2d'
+    # cursor:   '0x5fafff'
+  # normal:
+  #   black:    '0x2d2d2d'
+  #   red:      '0xf2777a'
+  #   green:    '0x99cc99'
+  #   yellow:   '0xffcc66'
+  #   blue:     '0x6699cc'
+  #   magenta:  '0xcc99cc'
+  #   cyan:     '0x66cccc'
+  #   white:    '0xd3d0c8'
+  # bright:
+  #   black:    '0x747369'
+  #   red:      '0xf2777a'
+  #   green:    '0x99cc99'
+  #   yellow:   '0xffcc66'
+  #   blue:     '0x6699cc'
+  #   magenta:  '0xcc99cc'
+  #   cyan:     '0x66cccc'
+  #   white:    '0xd3d0c8'
 
 # ==============================================================================
 # Visual Bell
