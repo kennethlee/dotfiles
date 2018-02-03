@@ -39,7 +39,7 @@ font:
   normal:
     family: Iosevka
     # Style can be specified to pick a specific face.
-    # style: medium
+    # style: regular
 
   # The bold font face
   bold:
@@ -91,12 +91,12 @@ colors:
     foreground: '0x080808'
   cursor:
     text:     '0x080808'
-    cursor:   '0x5fafff'
+    cursor:   '0xff5f87'
   normal:
     black:    '0x080808'
     red:      '0xff5f87'
     green:    '0x87d787'
-    yellow:   '0xffffaf'
+    yellow:   '0xd7d787'
     blue:     '0x5fafff'
     magenta:  '0xd7afff'
     cyan:     '0x5fafaf'
@@ -105,7 +105,7 @@ colors:
     black:    '0x6c6c6c'
     red:      '0xffd787'
     green:    '0xd7ffaf'
-    yellow:   '0xffff00'
+    yellow:   '0xffffaf'
     blue:     '0x5fd7ff'
     magenta:  '0xd7d7ff'
     cyan:     '0xafd7d7'
