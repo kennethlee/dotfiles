@@ -94,50 +94,50 @@ colors:
     cursor:   '0xff5f87'
   normal:
     black:    '0x080808'
-    red:      '0xff5f87'
-    green:    '0x87d787'
+    red:      '0xff0087'
+    green:    '0x008700'
     yellow:   '0xd7d787'
-    blue:     '0x5fafff'
-    magenta:  '0xd7afff'
+    blue:     '0x5f87ff'
+    magenta:  '0xd75fd7'
     cyan:     '0x5fafaf'
     white:    '0x949494'
   bright:
     black:    '0x6c6c6c'
-    red:      '0xffd787'
-    green:    '0xd7ffaf'
+    red:      '0xff5f87'
+    green:    '0x00af00'
     yellow:   '0xffffaf'
-    blue:     '0x5fd7ff'
-    magenta:  '0xd7d7ff'
-    cyan:     '0xafd7d7'
+    blue:     '0x5fafff'
+    magenta:  '0xd787d7'
+    cyan:     '0x00d7af'
     white:    '0x949494'
 
 # Base16 Eighties 256 - alacritty color config
 # Chris Kempson (http://chriskempson.com)
 # colors:
-  # primary:
-  #   background: '0xffffaf'
-  #   foreground: '0xd3d0c8'
-  # cursor:
-    # text:     '0x2d2d2d'
-    # cursor:   '0x5fafff'
-  # normal:
-  #   black:    '0x2d2d2d'
-  #   red:      '0xf2777a'
-  #   green:    '0x99cc99'
-  #   yellow:   '0xffcc66'
-  #   blue:     '0x6699cc'
-  #   magenta:  '0xcc99cc'
-  #   cyan:     '0x66cccc'
-  #   white:    '0xd3d0c8'
-  # bright:
-  #   black:    '0x747369'
-  #   red:      '0xf2777a'
-  #   green:    '0x99cc99'
-  #   yellow:   '0xffcc66'
-  #   blue:     '0x6699cc'
-  #   magenta:  '0xcc99cc'
-  #   cyan:     '0x66cccc'
-  #   white:    '0xd3d0c8'
+#   primary:
+#     background: '0xffffaf'
+#     foreground: '0xd3d0c8'
+#   cursor:
+#     text:     '0x2d2d2d'
+#     cursor:   '0x5fafff'
+#   normal:
+#     black:    '0x2d2d2d'
+#     red:      '0xf2777a'
+#     green:    '0x99cc99'
+#     yellow:   '0xffcc66'
+#     blue:     '0x6699cc'
+#     magenta:  '0xcc99cc'
+#     cyan:     '0x66cccc'
+#     white:    '0xd3d0c8'
+#   bright:
+#     black:    '0x747369'
+#     red:      '0xf2777a'
+#     green:    '0x99cc99'
+#     yellow:   '0xffcc66'
+#     blue:     '0x6699cc'
+#     magenta:  '0xcc99cc'
+#     cyan:     '0x66cccc'
+#     white:    '0xd3d0c8'
 
 # ==============================================================================
 # Visual Bell
@@ -214,7 +214,7 @@ live_config_reload: true
 # Entries in shell.args are passed unmodified as arguments to the shell.
 #
 shell:
-  program: /bin/bash
+  program: /bin/zsh
   args:
     - --login
 
