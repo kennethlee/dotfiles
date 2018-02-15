@@ -9,7 +9,7 @@ fi
 source ~/.zplug/init.zsh
 
 zplug "zplug/zplug", hook-build:"zplug --self-manage"
-zplug "olivierverdier/zsh-git-prompt", use:zshrc.sh, hook-build:"zplug clear"
+zplug denysdovhan/spaceship-prompt, use:spaceship.zsh, from:github, as:theme
 
 zplug load
 
@@ -29,14 +29,31 @@ source /usr/local/share/chruby/auto.sh
 export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow -g "!{.git,node_modules}/*" 2> /dev/null'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 
-# zsh-git-prompt
-# PROMPT='%B%m%~%b$(git_super_status) %# '
+# ==============================================================================
+# spaceship
 
-# set up the prompt
-autoload -Uz promptinit
-promptinit
-PROMPT='%{${fg[green]}%}[%n@%m]%{${reset_color}%} %~ $(git_super_status)
-%# '
+autoload -Uz promptinit; promptinit
+prompt spaceship
+
+SPACESHIP_DIR_COLOR="blue"
+
+SPACESHIP_ELIXIR_SHOW=false
+SPACESHIP_XCODE_SHOW_LOCAL=false
+SPACESHIP_SWIFT_SHOW_LOCAL=false
+SPACESHIP_GOLANG_SHOW=false
+SPACESHIP_PHP_SHOW=false
+SPACESHIP_HASKELL_SHOW=false
+SPACESHIP_JULIA_SHOW=false
+SPACESHIP_DOCKER_SHOW=false
+SPACESHIP_CONDA_SHOW=false
+SPACESHIP_PYENV_SHOW=false
+SPACESHIP_DOTNET_SHOW=false
+SPACESHIP_EMBER_SHOW=false
+SPACESHIP_KUBECONTEXT_SHOW=false
+
+SPACESHIP_VI_MODE_SHOW=true
+SPACESHIP_EXEC_TIME_SHOW=false
+SPACESHIP_BATTERY_SHOW=false
 
 # ==============================================================================
 # vimminess
@@ -51,6 +68,13 @@ bindkey '^w' backward-kill-word
 bindkey '^r' history-incremental-search-backward
 
 export KEYTIMEOUT=1
+
+function zle-line-init zle-keymap-select {
+  zle reset-prompt
+}
+
+zle -N zle-line-init
+zle -N zle-keymap-select
 
 # ==============================================================================
 # aliases
@@ -96,7 +120,7 @@ alias pserv='python -m SimpleHTTPServer 8000'
 alias crumb='jobs -p | xargs kill -15'
 
 # mongodb
-alias mongod='mongod --dbpath ~/db'
+alias mongop='mongod --dbpath ~/db'
 
 # ==============================================================================
 # color
@@ -110,7 +134,7 @@ export NVIM_TUI_ENABLE_TRUE_COLOR=1
 export PATH="/usr/local/heroku/bin:$PATH"
 
 # added by travis gem
-[ -f /Users/KLee/.travis/travis.sh ] && source /Users/KLee/.travis/travis.sh
+[ -f ~/.travis/travis.sh ] && source ~/.travis/travis.sh
 
 # export PATH="~/mongodb/bin:$PATH"
 export PATH=~/mongodb/bin:$PATH
