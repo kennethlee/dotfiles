@@ -2,14 +2,15 @@
 
 # check if zplug is installed, download automatically if not
 if [[ ! -d ~/.zplug ]]; then
-  git clone https://github.com/zplug/zplug ~/.zplug
-  source ~/.zplug/init.zsh && zplug update --self
+    git clone https://github.com/zplug/zplug ~/.zplug
+    source ~/.zplug/init.zsh && zplug update --self
 fi
 
 source ~/.zplug/init.zsh
 
 zplug "zplug/zplug", hook-build:"zplug --self-manage"
-zplug denysdovhan/spaceship-prompt, use:spaceship.zsh, from:github, as:theme
+zplug "olivierverdier/zsh-git-prompt", use:zshrc.sh, hook-build:"zplug clear"
+# zplug "BrandonRoehl/zsh-clean", use:clean.zsh, from:github, as:theme
 
 zplug load
 
@@ -30,34 +31,9 @@ export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow -g "!{.git,
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 
 # ==============================================================================
-# spaceship
+# bindings
 
-autoload -Uz promptinit; promptinit
-prompt spaceship
-
-SPACESHIP_DIR_COLOR="blue"
-
-SPACESHIP_ELIXIR_SHOW=false
-SPACESHIP_XCODE_SHOW_LOCAL=false
-SPACESHIP_SWIFT_SHOW_LOCAL=false
-SPACESHIP_GOLANG_SHOW=false
-SPACESHIP_PHP_SHOW=false
-SPACESHIP_HASKELL_SHOW=false
-SPACESHIP_JULIA_SHOW=false
-SPACESHIP_DOCKER_SHOW=false
-SPACESHIP_CONDA_SHOW=false
-SPACESHIP_PYENV_SHOW=false
-SPACESHIP_DOTNET_SHOW=false
-SPACESHIP_EMBER_SHOW=false
-SPACESHIP_KUBECONTEXT_SHOW=false
-
-SPACESHIP_VI_MODE_SHOW=true
-SPACESHIP_EXEC_TIME_SHOW=false
-SPACESHIP_BATTERY_SHOW=false
-
-# ==============================================================================
-# vimminess
-
+# vim
 bindkey -v
 
 bindkey '^P' up-history
@@ -67,14 +43,51 @@ bindkey '^h' backward-delete-char
 bindkey '^w' backward-kill-word
 bindkey '^r' history-incremental-search-backward
 
+# better searching in vim normal mode
+bindkey -M vicmd '?' history-incremental-search-backward
+bindkey -M vicmd '/' history-incremental-search-forward
+
 export KEYTIMEOUT=1
 
-function zle-line-init zle-keymap-select {
-  zle reset-prompt
+# ==============================================================================
+# better search history
+
+autoload -U up-line-or-beginning-search
+autoload -U down-line-or-beginning-search
+zle -N up-line-or-beginning-search
+zle -N down-line-or-beginning-search
+bindkey "^[[A" up-line-or-beginning-search # Up
+bindkey "^[[B" down-line-or-beginning-search # Down
+
+# ==============================================================================
+# vim
+
+# cursor: block for normal mode, i-beam for insert mode
+function zle-keymap-select zle-line-init {
+    # change cursor shape in iTerm2
+    case $KEYMAP in
+        vicmd)      print -n -- "\E]50;CursorShape=0\C-G";;  # block cursor
+        viins|main) print -n -- "\E]50;CursorShape=1\C-G";;  # line cursor
+    esac
+
+    zle reset-prompt
+    zle -R
+}
+
+function zle-line-finish {
+    print -n -- "\E]50;CursorShape=0\C-G"  # block cursor
 }
 
 zle -N zle-line-init
+zle -N zle-line-finish
 zle -N zle-keymap-select
+
+# ==============================================================================
+# zsh-git-prompt
+
+source ~/.zplug/repos/olivierverdier/zsh-git-prompt/zshrc.sh
+# an example prompt
+PROMPT='%B[%n@%m]%b %~ $(git_super_status) %# '
 
 # ==============================================================================
 # aliases
