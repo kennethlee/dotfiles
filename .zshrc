@@ -30,6 +30,9 @@ source /usr/local/share/chruby/auto.sh
 export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow -g "!{.git,node_modules}/*" 2> /dev/null'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 
+# zsh-git-prompt
+source ~/.zplug/repos/olivierverdier/zsh-git-prompt/zshrc.sh
+
 # ==============================================================================
 # bindings
 
@@ -82,12 +85,9 @@ zle -N zle-line-init
 zle -N zle-line-finish
 zle -N zle-keymap-select
 
-# ==============================================================================
-# zsh-git-prompt
-
-source ~/.zplug/repos/olivierverdier/zsh-git-prompt/zshrc.sh
-# an example prompt
-PROMPT='%B[%n@%m]%b %~ $(git_super_status) %# '
+# prompt
+# PROMPT='%B[%n@%m]%b %~ $(git_super_status) %# '
+PROMPT='%B[%n@%m]%b %~$(git_super_status) %# '
 
 # ==============================================================================
 # aliases
