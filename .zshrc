@@ -30,12 +30,8 @@ source /usr/local/share/chruby/auto.sh
 export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow -g "!{.git,node_modules}/*" 2> /dev/null'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 
-# zsh-git-prompt
-source ~/.zplug/repos/olivierverdier/zsh-git-prompt/zshrc.sh
-
-# work-around to enable use of <C-r>/<C-t> when using fzf in term window
-# https://github.com/junegunn/fzf/issues/809
-[ -n "$NVIM_LISTEN_ADDRESS" ] && export FZF_DEFAULT_OPTS='--no-height'
+# # zsh-git-prompt
+# source ~/.zplug/repos/olivierverdier/zsh-git-prompt/zshrc.sh
 
 # ==============================================================================
 # bindings
