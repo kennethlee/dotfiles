@@ -24,6 +24,7 @@ source /usr/local/share/chruby/chruby.sh
 # projects
 source /usr/local/share/chruby/chruby.sh
 source /usr/local/share/chruby/auto.sh
+chruby ruby-2.5.5
 
 # fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
