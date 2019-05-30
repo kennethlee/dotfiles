@@ -107,8 +107,8 @@ alias vi='nvim'
 alias vim='nvim'
 
 # laziness: wholesale update of vim plugins
-alias udpacks='for i in ~/.config/nvim/pack/bundle/start/*; do git -C $i pull; done'
-alias udpacko='for i in ~/.config/nvim/pack/bundle/opt/*; do git -C $i pull; done'
+alias udpacks='for i in ~/.config/nvim/pack/plugins/start/*; do git -C $i pull; done'
+alias udpacko='for i in ~/.config/nvim/pack/plugins/opt/*; do git -C $i pull; done'
 
 # fzf
 alias fz='fzf'
