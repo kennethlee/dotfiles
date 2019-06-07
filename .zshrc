@@ -93,6 +93,9 @@ alias ....='cd ../../..'
 # files/dir
 alias md='mkdir -p'
 
+# nave / node
+alias nd='nave use 12.3.1'
+
 # nvim
 alias v='nvim'
 alias vi='nvim'
