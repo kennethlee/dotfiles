@@ -9,8 +9,7 @@ fi
 source ~/.zplug/init.zsh
 
 zplug "zplug/zplug", hook-build:"zplug --self-manage"
-zplug "olivierverdier/zsh-git-prompt", use:zshrc.sh, hook-build:"zplug clear"
-# zplug "BrandonRoehl/zsh-clean", use:clean.zsh, from:github, as:theme
+zplug "BrandonRoehl/zsh-clean", use:clean.plugin.zsh, from:github, as:theme
 
 zplug load
 
@@ -30,9 +29,6 @@ chruby ruby-2.5.5
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow -g "!{.git,node_modules}/*" 2> /dev/null'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
-
-# # zsh-git-prompt
-# source ~/.zplug/repos/olivierverdier/zsh-git-prompt/zshrc.sh
 
 # ==============================================================================
 # bindings
@@ -85,10 +81,6 @@ function zle-line-finish {
 zle -N zle-line-init
 zle -N zle-line-finish
 zle -N zle-keymap-select
-
-# prompt
-# PROMPT='%B[%n@%m]%b %~ $(git_super_status) %# '
-PROMPT='%B[%n@%m]%b %~$(git_super_status) %# '
 
 # ==============================================================================
 # aliases
