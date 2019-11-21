@@ -1,5 +1,4 @@
-# github .gitignore
-# https://gist.github.com/octocat/9257657
+# Run `git config --global core.excludesfile ~/.gitignore_global`
 
 # compiled source
 *.com
@@ -115,7 +114,7 @@ config/application.yml
 .rvmrc
 
 # ignore node modules
-/node_modules
+node_modules/
 
 # if using bower-rails ignore default bower_components path bower.json files
 /vendor/assets/bower_components
