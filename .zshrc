@@ -94,7 +94,7 @@ alias ....='cd ../../..'
 alias md='mkdir -p'
 
 # nave / node
-alias nd='nave use 12.3.1'
+alias nd='nave use latest'
 
 # nvim
 alias v='nvim'
