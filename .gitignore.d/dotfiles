@@ -1,8 +1,6 @@
 *
 !/.gitignore.d/
 !/.gitignore.d/dotfiles
-!/.bash_profile
-!/.bashrc
 !/.gemrc
 !/.gitconfig
 !/.gitignore_global
@@ -13,6 +11,4 @@
 !/.zshrc
 
 !/.config/
-!/.config/alacritty
-!/.config/alacritty/alacritty.yml
 
