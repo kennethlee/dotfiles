@@ -14,11 +14,19 @@ env:
   es6: true
   node: true
 
+parserOptions:
+  ecmaVersion: 2017
+  sourceType: module
+  ecmaFeatures:
+    jsx: true
+
 rules:
   # comma-dangle:
   #   - 2
   #   - always-multiline
-  prettier/prettier: 2
+  prettier/prettier:
+    - 2
+    - trailingComma: all
   react/jsx-filename-extension:
     - 1
     - extensions:
