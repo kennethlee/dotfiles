@@ -1,0 +1,26 @@
+extends:
+  - airbnb
+  - airbnb/hooks
+  # make sure prettier is last so that it gets a chance to overeride other configs.
+  - prettier
+  - prettier/react
+
+plugins:
+  - prettier
+  - react
+
+env:
+  browser: true
+  es6: true
+  node: true
+
+rules:
+  # comma-dangle:
+  #   - 2
+  #   - always-multiline
+  prettier/prettier: 2
+  react/jsx-filename-extension:
+    - 1
+    - extensions:
+      - .js
+      - .jsx

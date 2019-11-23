@@ -6,7 +6,7 @@
 !/.gitignore_global
 !/.ignore
 !/.inputrc
-!/.eslintrc.json
+!/.eslintrc.yaml
 !/.profile
 !/.zshrc
 
