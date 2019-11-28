@@ -109,16 +109,6 @@ alias udpacko='for i in ~/.config/nvim/pack/plugins/opt/*; do git -C $i pull; do
 alias fz='fzf'
 alias udfz='cd ~/.fzf && git pull && ./install && cd -'
 
-# rails/bundler
-alias r='rails'
-alias be='bundle exec'
-alias bi='bundle install'
-alias bu='bundle update'
-alias dbc='rake db:create'
-alias dbm='rake db:migrate'
-alias dbs='rake db:seed'
-alias dbd='rake db:drop'
-
 # tree: colorize by default
 alias tree='tree -C'
 alias ls='ls -G'
