@@ -101,9 +101,13 @@ alias v='nvim'
 alias vi='nvim'
 alias vim='nvim'
 
+# ledger
+alias budg='ledger bal ^Asset:Budget'
+alias acc='ledger bal ^Asset:Liquid ^Liability -R'
+
 # laziness: wholesale update of vim plugins
-alias udpacks='for i in ~/.config/nvim/pack/plugins/start/*; do git -C $i pull; done'
-alias udpacko='for i in ~/.config/nvim/pack/plugins/opt/*; do git -C $i pull; done'
+alias udlang='for i in ~/.config/nvim/pack/lang/start/*; do git -C $i pull; done'
+alias udpacks='for i in ~/.config/nvim/pack/bundle/start/*; do git -C $i pull; done'
 
 # fzf
 alias fz='fzf'
