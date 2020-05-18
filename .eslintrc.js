@@ -15,9 +15,6 @@ module.exports = {
     ecmaVersion: 2017,
     sourceType: "module",
     jsx: true,
-    ecmaFeatures: {
-      experimentalObjectRestSpread: true,
-    },
   },
   plugins: ["react", "prettier"],
   rules: {
