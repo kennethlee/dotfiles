@@ -6,10 +6,11 @@
 !/.gitignore_global
 !/.ignore
 !/.inputrc
-!/.eslintrc.js
 !/.prettierrc
 !/.profile
 !/.zshrc
+!/projects/
+!/projects/.eslintrc.js
 
 !/.config/
 
