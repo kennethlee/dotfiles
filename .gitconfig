@@ -17,14 +17,18 @@
   type = cat-file -t
   dump = cat-file -p
 
-[merge]
-  tool = vimdiff
-
-[push]
-  default = simple
-
 [color]
   ui = auto
 
 [commit]
   verbose = true
+
+[merge]
+  tool = vimdiff
+
+[pull]
+  ff = only
+
+[push]
+  default = simple
+

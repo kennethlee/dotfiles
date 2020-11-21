@@ -106,12 +106,12 @@ alias budg='ledger bal ^Asset:Budget'
 alias acc='ledger bal ^Asset:Liquid ^Liability -R'
 
 # laziness: wholesale update of vim plugins
-alias udlang='for i in ~/.config/nvim/pack/lang/start/*; do git -C $i pull; done'
-alias udpacks='for i in ~/.config/nvim/pack/bundle/start/*; do git -C $i pull; done'
+alias udlang='for i in ~/.config/nvim/pack/lang/start/*; do git -C $i pull --ff-only; done'
+alias udpacks='for i in ~/.config/nvim/pack/bundle/start/*; do git -C $i pull --ff-only; done'
 
 # fzf
 alias fz='fzf'
-alias udfz='cd ~/.fzf && git pull && ./install && cd -'
+alias udfz='cd ~/.fzf && git pull --ff-only && ./install && cd -'
 
 # tree: colorize by default
 alias tree='tree -C'
