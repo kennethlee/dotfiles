@@ -10,7 +10,8 @@
 !/.profile
 !/.zshrc
 !/projects/
-!/projects/.eslintrc.js
+!/projects/javascript/
+!/projects/javascript/.eslintrc.js
 
 !/.config/
 
