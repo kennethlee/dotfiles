@@ -106,8 +106,8 @@ alias budg='ledger bal ^Asset:Budget'
 alias acc='ledger bal ^Asset:Liquid ^Liability -R'
 
 # laziness: wholesale update of vim plugins
-alias udlang='for i in ~/.config/nvim/pack/lang/start/*; do git -C $i pull --ff-only; done'
-alias udpacks='for i in ~/.config/nvim/pack/bundle/start/*; do git -C $i pull --ff-only; done'
+alias udcol='for i in ~/.local/share/nvim/site/pack/colors/opt/*; do git -C $i pull --ff-only; done'
+alias udplug='for i in ~/.local/share/nvim/site/pack/plugins/start/*; do git -C $i pull --ff-only; done'
 
 # fzf
 alias fz='fzf'
