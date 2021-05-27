@@ -6,12 +6,9 @@
 !/.gitignore_global
 !/.ignore
 !/.inputrc
-!/.prettierrc
 !/.profile
 !/.zshrc
 !/projects/
 !/projects/javascript/
 !/projects/javascript/.eslintrc.js
-
-!/.config/
-
+!/projects/javascript/.prettierrc
