@@ -8,6 +8,11 @@
 !/.inputrc
 !/.profile
 !/.zshrc
+
+!/.config/
+!/.config/alacritty/
+!/.config/alacritty/alacritty.yml
+
 !/projects/
 !/projects/javascript/
 !/projects/javascript/.eslintrc.js
