@@ -8,11 +8,6 @@
 !/.inputrc
 !/.profile
 !/.zshrc
-
-!/.config/
-!/.config/kitty/
-!/.config/kitty/kitty.conf
-
 !/projects/
 !/projects/javascript/
 !/projects/javascript/.eslintrc.js
