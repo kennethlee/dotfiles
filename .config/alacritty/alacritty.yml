@@ -35,113 +35,116 @@ font:
 # -----------------------------------------------------------------------------
 # colorscheme
 
-# Base16 Eighties
-colors:
-  primary:
-    background: '0x2d2d2d'
-    foreground: '0xd3d0c8'
-  cursor:
-    text: '0x2d2d2d'
-    cursor: '0xf2777a'
-  normal:
-    black:   '0x2d2d2d'
-    red:     '0xf2777a'
-    green:   '0x99cc99'
-    yellow:  '0xffcc66'
-    blue:    '0x6699cc'
-    magenta: '0xcc99cc'
-    cyan:    '0x66cccc'
-    white:   '0xd3d0c8'
-  bright:
-    black:   '0x747369'
-    red:     '0xf99157'
-    green:   '0x393939'
-    yellow:  '0x515151'
-    blue:    '0xa09f93'
-    magenta: '0xe8e6df'
-    cyan:    '0xd27b53'
-    white:   '0xf2f0ec'
+schemes:
+  Base16Eighties: &Base16Eighties
+    primary:
+      background: '0x2d2d2d'
+      foreground: '0xd3d0c8'
+    cursor:
+      text: '0x2d2d2d'
+      cursor: '0xf2777a'
+    normal:
+      black:   '0x2d2d2d'
+      red:     '0xf2777a'
+      green:   '0x99cc99'
+      yellow:  '0xffcc66'
+      blue:    '0x6699cc'
+      magenta: '0xcc99cc'
+      cyan:    '0x66cccc'
+      white:   '0xd3d0c8'
+    bright:
+      black:   '0x747369'
+      red:     '0xf99157'
+      green:   '0x393939'
+      yellow:  '0x515151'
+      blue:    '0xa09f93'
+      magenta: '0xe8e6df'
+      cyan:    '0xd27b53'
+      white:   '0xf2f0ec'
 
-# # Base16 Monokai
-# colors:
-#   primary:
-#     background: '0x272822'
-#     foreground: '0xf8f8f2'
-#   cursor:
-#     text: '0x272822'
-#     cursor: '0xf92672'
-#   normal:
-#     black:   '0x272822'
-#     red:     '0xf92672'
-#     green:   '0xa6e22e'
-#     yellow:  '0xf4bf75'
-#     blue:    '0x66d9ef'
-#     magenta: '0xae81ff'
-#     cyan:    '0xa1efe4'
-#     white:   '0xf8f8f2'
-#   bright:
-#     black:   '0x75715e'
-#     red:     '0xfd971f'
-#     green:   '0x383830'
-#     yellow:  '0x49483e'
-#     blue:    '0xa59f85'
-#     magenta: '0xf5f4f1'
-#     cyan:    '0xcc6633'
-#     white:   '0xf9f8f5'
+  Base16Monokai: &Base16Monokai
+    primary:
+      background: '0x272822'
+      foreground: '0xf8f8f2'
+    cursor:
+      text: '0x272822'
+      cursor: '0xf92672'
+    normal:
+      black:   '0x272822'
+      red:     '0xf92672'
+      green:   '0xa6e22e'
+      yellow:  '0xf4bf75'
+      blue:    '0x66d9ef'
+      magenta: '0xae81ff'
+      cyan:    '0xa1efe4'
+      white:   '0xf8f8f2'
+    bright:
+      black:   '0x75715e'
+      red:     '0xfd971f'
+      green:   '0x383830'
+      yellow:  '0x49483e'
+      blue:    '0xa59f85'
+      magenta: '0xf5f4f1'
+      cyan:    '0xcc6633'
+      white:   '0xf9f8f5'
 
-# # Base16 Tomorrow Night
-# colors:
-#   primary:
-#     background: '0x1d1f21'
-#     foreground: '0xc5c8c6'
-#   cursor:
-#     text: '0x1d1f21'
-#     cursor: '0xcc6666'
-#   normal:
-#     black:   '0x1d1f21'
-#     red:     '0xcc6666'
-#     green:   '0xb5bd68'
-#     yellow:  '0xf0c674'
-#     blue:    '0x81a2be'
-#     magenta: '0xb294bb'
-#     cyan:    '0x8abeb7'
-#     white:   '0xc5c8c6'
-#   bright:
-#     black:   '0x969896'
-#     red:     '0xde935f'
-#     green:   '0x282a2e'
-#     yellow:  '0x373b41'
-#     blue:    '0xb4b7b4'
-#     magenta: '0xe0e0e0'
-#     cyan:    '0xa3685a'
-#     white:   '0xffffff'
+  Base16TomorrowNight: &Base16TomorrowNight
+    primary:
+      background: '0x1d1f21'
+      foreground: '0xc5c8c6'
+    cursor:
+      text: '0x1d1f21'
+      cursor: '0xcc6666'
+    normal:
+      black:   '0x1d1f21'
+      red:     '0xcc6666'
+      green:   '0xb5bd68'
+      yellow:  '0xf0c674'
+      blue:    '0x81a2be'
+      magenta: '0xb294bb'
+      cyan:    '0x8abeb7'
+      white:   '0xc5c8c6'
+    bright:
+      black:   '0x969896'
+      red:     '0xde935f'
+      green:   '0x282a2e'
+      yellow:  '0x373b41'
+      blue:    '0xb4b7b4'
+      magenta: '0xe0e0e0'
+      cyan:    '0xa3685a'
+      white:   '0xffffff'
 
-# # Base16 Twilight
-# colors:
-#   primary:
-#     background: '0x1e1e1e'
-#     foreground: '0xa7a7a7'
-#   cursor:
-#     text: '0x1e1e1e'
-#     cursor: '0xcf6a4c'
-#   normal:
-#     black:   '0x1e1e1e'
-#     red:     '0xcf6a4c'
-#     green:   '0x8f9d6a'
-#     yellow:  '0xf9ee98'
-#     blue:    '0x7587a6'
-#     magenta: '0x9b859d'
-#     cyan:    '0xafc4db'
-#     white:   '0xa7a7a7'
-#   bright:
-#     black:   '0x5f5a60'
-#     red:     '0xcda869'
-#     green:   '0x323537'
-#     yellow:  '0x464b50'
-#     blue:    '0x838184'
-#     magenta: '0xc3c3c3'
-#     cyan:    '0x9b703f'
-#     white:   '0xffffff'
+  Base16Twilight: &Base16Twilight
+    primary:
+      background: '0x1e1e1e'
+      foreground: '0xa7a7a7'
+    cursor:
+      text: '0x1e1e1e'
+      cursor: '0xcf6a4c'
+    normal:
+      black:   '0x1e1e1e'
+      red:     '0xcf6a4c'
+      green:   '0x8f9d6a'
+      yellow:  '0xf9ee98'
+      blue:    '0x7587a6'
+      magenta: '0x9b859d'
+      cyan:    '0xafc4db'
+      white:   '0xa7a7a7'
+    bright:
+      black:   '0x5f5a60'
+      red:     '0xcda869'
+      green:   '0x323537'
+      yellow:  '0x464b50'
+      blue:    '0x838184'
+      magenta: '0xc3c3c3'
+      cyan:    '0x9b703f'
+      white:   '0xffffff'
+
+# Set your colorscheme:
+colors: *Base16Eighties
+# colors: *Base16Monokai
+# colors: *Base16TomorrowNight
+# colors: *Base16Twilight
 
 draw_bold_text_with_bright_colors: false
 
