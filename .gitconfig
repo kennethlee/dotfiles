@@ -8,6 +8,9 @@
   editor = "NVIM_TUI_ENABLE_TRUE_COLOR=1 nvim"
   excludesfile = ~/.gitignore_global
 
+[init]
+  defaultBranch = main
+
 [alias]
   co = checkout
   ci = commit
@@ -28,4 +31,3 @@
 
 [push]
   default = simple
-
