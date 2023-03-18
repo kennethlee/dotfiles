@@ -16,15 +16,6 @@ zplug load
 # ==============================================================================
 # sourcing
 
-# enable chruby
-source /usr/local/share/chruby/chruby.sh
-
-# auto-switch the current version of Ruby when you cd between your different
-# projects
-source /usr/local/share/chruby/chruby.sh
-source /usr/local/share/chruby/auto.sh
-chruby ruby-2.5.5
-
 # fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 export FZF_DEFAULT_COMMAND='rg --files --hidden --follow --no-ignore-vcs -g "!{node_modules,.git}"'
