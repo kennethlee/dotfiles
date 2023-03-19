@@ -1,7 +1,0 @@
-# general
-
-# suppress the ri and rdoc documentation
-gem: --no-rdoc --no-ri
-
-# ==============================================================================
-

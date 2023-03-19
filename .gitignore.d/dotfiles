@@ -1,7 +1,6 @@
 *
 !/.gitignore.d/
 !/.gitignore.d/dotfiles
-!/.gemrc
 !/.gitconfig
 !/.gitignore_global
 !/.ignore
