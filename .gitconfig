@@ -30,4 +30,4 @@
   tool = vimdiff
 
 [push]
-  default = simple
+  default = nothing
