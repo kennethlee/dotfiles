@@ -1,3 +1,9 @@
+# colors
+
+TERM=xterm-256color
+export NVIM_TUI_ENABLE_TRUE_COLOR=1
+
+# ==============================================================================
 # zplug
 
 # check if zplug is installed, download automatically if not
@@ -115,21 +121,3 @@ alias crumb='jobs -p | xargs kill -15'
 
 # mongodb
 alias mongop='mongod --dbpath ~/db'
-
-# ==============================================================================
-# color
-
-export NVIM_TUI_ENABLE_TRUE_COLOR=1
-
-# ==============================================================================
-# misc
-
-# added by the Heroku Toolbelt
-export PATH="/usr/local/heroku/bin:$PATH"
-
-# added by travis gem
-[ -f ~/.travis/travis.sh ] && source ~/.travis/travis.sh
-
-# export PATH="~/mongodb/bin:$PATH"
-export PATH=~/mongodb/bin:$PATH
-
