@@ -12,6 +12,9 @@
 !/.config/alacritty/
 !/.config/alacritty/alacritty.yml
 
+!/.config/wezterm/
+!/.config/wezterm/wezterm.lua
+
 !/projects/
 !/projects/javascript/
 !/projects/javascript/.eslintrc.js
