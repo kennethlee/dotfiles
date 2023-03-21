@@ -9,9 +9,6 @@
 !/.zshrc
 
 !/.config/
-!/.config/alacritty/
-!/.config/alacritty/alacritty.yml
-
 !/.config/wezterm/
 !/.config/wezterm/wezterm.lua
 
