@@ -60,24 +60,26 @@ bindkey "^[[B" down-line-or-beginning-search # Down
 # vim
 
 # cursor: block for normal mode, i-beam for insert mode
-function zle-keymap-select zle-line-init {
-    # change cursor shape in iTerm2
-    case $KEYMAP in
-        vicmd)      print -n -- "\E]50;CursorShape=0\C-G";;  # block cursor
-        viins|main) print -n -- "\E]50;CursorShape=1\C-G";;  # line cursor
-    esac
-
-    zle reset-prompt
-    zle -R
+function zle-keymap-select {
+  if [[ ${KEYMAP} == vicmd ]] ||
+     [[ $1 = 'block' ]]; then
+    echo -ne '\e[1 q'
+  elif [[ ${KEYMAP} == main ]] ||
+       [[ ${KEYMAP} == viins ]] ||
+       [[ ${KEYMAP} = '' ]] ||
+       [[ $1 = 'beam' ]]; then
+    echo -ne '\e[5 q'
+  fi
 }
 
-function zle-line-finish {
-    print -n -- "\E]50;CursorShape=0\C-G"  # block cursor
-}
-
-zle -N zle-line-init
-zle -N zle-line-finish
 zle -N zle-keymap-select
+zle-line-init() {
+    zle -K viins # initiate `vi insert` as keymap (can be removed if `bindkey -V` has been set elsewhere)
+    echo -ne "\e[5 q"
+}
+zle -N zle-line-init
+echo -ne '\e[5 q' # Use beam shape cursor on startup.
+preexec() { echo -ne '\e[5 q' ;} # Use beam shape cursor for each new prompt.
 
 # ==============================================================================
 # aliases
