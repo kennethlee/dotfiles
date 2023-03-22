@@ -36,6 +36,7 @@ config.font = wezterm.font_with_fallback({
   "PragmataPro Mono Liga",
   "Menlo",
 })
+
 config.font_size = 14.0
 config.color_scheme = "Eighties (base16)"
 -- config.color_scheme = "Monokai (base16)"
@@ -51,13 +52,6 @@ config.keys = {
     mods = "CTRL",
     action = wezterm.action.ToggleFullScreen,
   },
-
-  --  -- TODO: toggle hotkey.
-  -- {
-  --   key = "`",
-  --   mods = "CTRL",
-  --   action = wezterm.action.???,
-  -- },
 }
 
 return config
