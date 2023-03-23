@@ -11,6 +11,9 @@
 !/.config/
 !/.config/wezterm/
 !/.config/wezterm/wezterm.lua
+!/.config/wezterm/colors/
+!/.config/wezterm/colors/Melange_Dark.toml
+!/.config/wezterm/colors/Melange_Light.toml
 
 !/projects/
 !/projects/javascript/

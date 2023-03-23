@@ -38,8 +38,9 @@ config.font = wezterm.font_with_fallback({
 })
 
 config.font_size = 14.0
-config.color_scheme = "Catppuccin Frappe"
 -- config.color_scheme = "Eighties (base16)"
+config.color_scheme = "Melange_Dark"
+-- config.color_scheme = "Melange_Light"
 -- config.color_scheme = "Monokai (base16)"
 -- config.color_scheme = "Tomorrow Night"
 -- config.color_scheme = "Tomorrow Night Eighties"
