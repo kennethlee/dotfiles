@@ -36,15 +36,16 @@ config.font = wezterm.font_with_fallback({
   "PragmataPro Mono Liga",
   "Menlo",
 })
-
 config.font_size = 14.0
+
 -- config.color_scheme = "Eighties (base16)"
 config.color_scheme = "Melange_Dark"
 -- config.color_scheme = "Melange_Light"
 -- config.color_scheme = "Monokai (base16)"
--- config.color_scheme = "Tomorrow Night"
+-- config.color_scheme = "Palenight (Gogh)"
 -- config.color_scheme = "Tomorrow Night Eighties"
--- config.color_scheme = "Twilight (base16)"
+-- config.color_scheme = "WarmNeon"
+-- config.color_scheme = "Whimsy"
 
 -- keys ------------------------------------------------------------------------
 
