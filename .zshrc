@@ -93,6 +93,9 @@ alias ....='cd ../../..'
 # files/dir
 alias md='mkdir -p'
 
+# brew
+alias brewcl='brew cleanup --prune=all'
+
 # nave / node
 alias nd='nave use'
 
