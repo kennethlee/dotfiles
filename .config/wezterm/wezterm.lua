@@ -33,7 +33,7 @@ config.window_padding = {
 -- color -----------------------------------------------------------------------
 
 config.font = wezterm.font_with_fallback({
-  "PragmataPro Mono Liga",
+  "PragmataPro VF Mono Liga",
   "Menlo",
 })
 config.font_size = 14.0
