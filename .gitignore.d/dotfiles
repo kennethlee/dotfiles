@@ -9,6 +9,8 @@
 !/.zshrc
 
 !/.config/
+!/.config/ghostty/
+!/.config/ghostty/config
 !/.config/wezterm/
 !/.config/wezterm/wezterm.lua
 !/.config/wezterm/colors/

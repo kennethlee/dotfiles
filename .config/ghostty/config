@@ -1,0 +1,7 @@
+font-family = "PragmataPro VF Mono Liga"
+font-size = 14
+
+theme = "Tomorrow Night Eighties"
+# theme = "Melange Dark"
+
+keybind = global:ctrl+backquote=toggle_quick_terminal
