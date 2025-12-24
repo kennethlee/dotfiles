@@ -1,7 +1,32 @@
-font-family = "PragmataPro VF Mono Liga"
-font-size = 14
+# UI ---------------------------------------------------------------------------
 
+font-family = "PragmataPro VF Mono Liga"
+font-size = 15
+window-title-font-family = "PragmataPro VF Mono Liga"
 theme = "Tomorrow Night Eighties"
 # theme = "Melange Dark"
 
-keybind = global:ctrl+backquote=toggle_quick_terminal
+# macos-hidden = always
+fullscreen = true
+window-position-x = 0
+window-position-y = 0
+window-height = 60
+window-width = 90
+quick-terminal-position = bottom
+quick-terminal-size = 40%
+
+# behavior ---------------------------------------------------------------------
+
+clipboard-read = allow
+clipboard-write = allow
+clipboard-paste-protection = true
+clipboard-trim-trailing-spaces = true
+mouse-hide-while-typing = true
+
+macos-auto-secure-input = true
+macos-secure-input-indication = true
+
+# keys -------------------------------------------------------------------------
+
+keybind = global:control+escape=toggle_quick_terminal
+keybind = global:shift+tab=toggle_quick_terminal
