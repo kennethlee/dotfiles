@@ -29,5 +29,5 @@ macos-secure-input-indication = true
 
 # keys -------------------------------------------------------------------------
 
+keybind = global:control+backspace=toggle_quick_terminal
 keybind = global:control+escape=toggle_quick_terminal
-keybind = global:shift+tab=toggle_quick_terminal
