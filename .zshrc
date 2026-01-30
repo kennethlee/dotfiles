@@ -20,12 +20,34 @@ zplug "BrandonRoehl/zsh-clean", use:clean.plugin.zsh, from:github, as:theme
 zplug load
 
 # ==============================================================================
-# sourcing
-
 # fzf
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-export FZF_DEFAULT_COMMAND='rg --files --hidden --follow --no-ignore-vcs -g "!{node_modules,.git}"'
-export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+
+source <(fzf --zsh)
+
+# feed fzf with fd (if installed); otherwise, with rg.
+FZF_DEFAULT_COMMAND=""
+fd='fd --type f --strip-cwd-prefix'
+rg='rg --files --hidden --follow --no-ignore-vcs -g "!{node_modules,.git}"'
+if [ -x "$(command -v fd)" ]; then
+  FZF_DEFAULT_COMMAND=$fd
+elif ! [ -x "$(command -v fd)" ] && [ -x "$(command -v rg)" ]; then
+  FZF_DEFAULT_COMMAND=$rg
+else
+  echo 'Raw fzf.'
+fi
+export FZF_DEFAULT_COMMAND
+# command echo "FZF fed by: $FZF_DEFAULT_COMMAND"
+
+export FZF_DEFAULT_OPTS="-m --inline-info --style=full
+  --preview '([[ -f {} ]] && (bat --style=numbers --color=always {} || cat {})) || ([[ -d {} ]] && (tree -C {} | less)) || echo {} 2> /dev/null | head -200'
+  --bind '?:toggle-preview'
+"
+
+alias fz="fzf\
+  --style full\
+  --preview 'fzf-preview.sh {}'\
+  --bind 'focus:transform-header:file\
+  --brief {}'"
 
 # ==============================================================================
 # bindings
