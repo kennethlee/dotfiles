@@ -85,20 +85,6 @@ preexec() { echo -ne "\e[6 q" ;} # Use beam shape cursor for each new prompt.
 # ==============================================================================
 # aliases
 
-# navigation
-alias ..='cd ..'
-alias ...='cd ../..'
-alias ....='cd ../../..'
-
-# files/dir
-alias md='mkdir -p'
-
-# brew
-alias brewcl='brew cleanup --prune=all'
-
-# nave / node
-alias nd='nave use'
-
 # nvim
 alias v='nvim'
 alias vi='nvim'
@@ -108,22 +94,9 @@ alias vim='nvim'
 alias budg='ledger bal ^Asset:Budget'
 alias acc='ledger bal ^Asset:Liquid ^Liability -R'
 
-# laziness: wholesale update of vim plugins
-alias udcol='for i in ~/.local/share/nvim/site/pack/colors/opt/*; do git -C $i pull --ff-only; done'
-alias udplug='for i in ~/.local/share/nvim/site/pack/plugins/start/*; do git -C $i pull --ff-only; done'
-
-# fzf
-alias fz='fzf'
-alias udfz='cd ~/.fzf && git pull --ff-only && ./install && cd -'
-
 # tree: colorize by default
 alias tree='tree -C'
 alias ls='ls -G'
 
-alias pserv='python -m SimpleHTTPServer 8000'
-
 # kill all background processes
 alias crumb='jobs -p | xargs kill -15'
-
-# mongodb
-alias mongop='mongod --dbpath ~/db'
