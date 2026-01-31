@@ -4,22 +4,6 @@ TERM=xterm-256color
 export NVIM_TUI_ENABLE_TRUE_COLOR=1
 
 # ==============================================================================
-# zplug
-
-# check if zplug is installed, download automatically if not
-if [[ ! -d ~/.zplug ]]; then
-    git clone https://github.com/zplug/zplug ~/.zplug
-    source ~/.zplug/init.zsh && zplug update --self
-fi
-
-source ~/.zplug/init.zsh
-
-zplug "zplug/zplug", hook-build:"zplug --self-manage"
-zplug "BrandonRoehl/zsh-clean", use:clean.plugin.zsh, from:github, as:theme
-
-zplug load
-
-# ==============================================================================
 # fzf
 
 source <(fzf --zsh)
@@ -122,3 +106,9 @@ alias ls='ls -G'
 
 # kill all background processes
 alias crumb='jobs -p | xargs kill -15'
+
+# ==============================================================================
+# last
+
+# starship
+eval "$(starship init zsh)"
