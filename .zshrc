@@ -19,7 +19,8 @@ export FZF_DEFAULT_COMMAND
 
 export FZF_DEFAULT_OPTS="-m --inline-info --style=full
   --preview '([[ -f {} ]] && (bat --style=numbers --color=always {} || cat {})) || ([[ -d {} ]] && (tree -C {} | less)) || echo {} 2> /dev/null | head -200'
-  --bind '?:toggle-preview'
+  # --bind '?:toggle-preview'
+  --bind 'focus:transform-header:file --brief {}'
 "
 
 # ==============================================================================
