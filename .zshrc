@@ -90,6 +90,8 @@ else
   echo "* tree is not installed."
 fi
 
+alias ls="ls -FG"
+
 # kill all background processes
 alias crumb='jobs -p | xargs kill -15'
 
