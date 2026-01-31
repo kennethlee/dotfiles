@@ -6,11 +6,11 @@ source <(fzf --zsh)
 # feed fzf with fd (if installed); otherwise, with rg.
 FZF_DEFAULT_COMMAND=""
 fd='fd --type f --strip-cwd-prefix'
-rg='rg --files --hidden --follow --no-ignore-vcs -g "!{node_modules,.git}"'
+rg=(rg --files --hidden --follow --no-ignore-vcs -g "!{node_modules,.git}")
 if [ -x "$(command -v fd)" ]; then
   FZF_DEFAULT_COMMAND=$fd
 elif ! [ -x "$(command -v fd)" ] && [ -x "$(command -v rg)" ]; then
-  FZF_DEFAULT_COMMAND=$rg
+  FZF_DEFAULT_COMMAND="${rg[*]}"
 else
   echo 'Raw fzf.'
 fi
