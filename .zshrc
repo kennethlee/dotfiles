@@ -1,11 +1,6 @@
-# colors
-
-TERM=xterm-256color
-export NVIM_TUI_ENABLE_TRUE_COLOR=1
-
-# ==============================================================================
 # fzf
 
+# Set up fzf key bindings and fuzzy completion
 source <(fzf --zsh)
 
 # feed fzf with fd (if installed); otherwise, with rg.
@@ -61,32 +56,6 @@ zle -N up-line-or-beginning-search
 zle -N down-line-or-beginning-search
 bindkey "^[[A" up-line-or-beginning-search # Up
 bindkey "^[[B" down-line-or-beginning-search # Down
-
-# ==============================================================================
-# vim
-
-# cursor: block for normal mode, i-beam for insert mode
-function zle-keymap-select {
-  if [[ ${KEYMAP} == vicmd ]] ||
-     [[ $2 = "block" ]]; then
-    echo -ne "\e[2 q"
-  elif [[ ${KEYMAP} == main ]] ||
-       [[ ${KEYMAP} == viins ]] ||
-       [[ ${KEYMAP} = '' ]] ||
-       [[ $2 = "beam" ]]; then
-    echo -ne "\e[6 q"
-  fi
-}
-
-zle -N zle-keymap-select
-zle-line-init() {
-    zle -K viins # initiate `vi insert` as keymap (can be removed if `bindkey -V` has been set elsewhere)
-    echo -ne "\e[6 q"
-}
-
-zle -N zle-line-init
-echo -ne "\e[6 q" # Use beam shape cursor on startup.
-preexec() { echo -ne "\e[6 q" ;} # Use beam shape cursor for each new prompt.
 
 # ==============================================================================
 # aliases
