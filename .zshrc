@@ -22,12 +22,6 @@ export FZF_DEFAULT_OPTS="-m --inline-info --style=full
   --bind '?:toggle-preview'
 "
 
-alias fz="fzf\
-  --style full\
-  --preview 'fzf-preview.sh {}'\
-  --bind 'focus:transform-header:file\
-  --brief {}'"
-
 # ==============================================================================
 # bindings
 
@@ -60,14 +54,17 @@ bindkey "^[[B" down-line-or-beginning-search # Down
 # ==============================================================================
 # aliases
 
-# nvim
-alias v='nvim'
-alias vi='nvim'
-alias vim='nvim'
+# fzf
+alias fz="fzf"
 
 # ledger
 alias budg='ledger bal ^Asset:Budget'
 alias acc='ledger bal ^Asset:Liquid ^Liability -R'
+
+# nvim
+alias v='nvim'
+alias vi='nvim'
+alias vim='nvim'
 
 # tree: colorize by default
 alias tree='tree -C'
