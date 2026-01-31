@@ -1,5 +1,6 @@
-# fzf
+# tools
 
+# fzf
 if [ -x "$(command -v fzf)" ]; then
   # Set up fzf key bindings and fuzzy completion
   source <(fzf --zsh)
@@ -23,7 +24,6 @@ if [ -x "$(command -v fzf)" ]; then
   export FZF_DEFAULT_OPTS="
     -m
     --style=full
-    --info=inline
     --bind 'focus:transform-header:file --brief {}'
     # use '?' to toggle file preview
     --preview-window=hidden --bind '?:toggle-preview'
@@ -31,6 +31,30 @@ if [ -x "$(command -v fzf)" ]; then
   "
 else
   echo "* fzf is not installed."
+fi
+
+# ledger
+if [ -x "$(command -v ledger)" ]; then
+  alias budg='ledger bal ^Asset:Budget'
+  alias acc='ledger bal ^Asset:Liquid ^Liability -R'
+else
+  echo "* ledger is not installed."
+fi
+
+# nvim
+if [ -x "$(command -v nvim)" ]; then
+  alias v='nvim'
+  alias vi='nvim'
+  alias vim='nvim'
+else
+  echo "* nvim is not installed."
+fi
+
+if [ -x "$(command -v tree)" ]; then
+  # colorize by default
+  alias tree='tree -C'
+else
+  echo "* tree is not installed."
 fi
 
 # ==============================================================================
@@ -65,30 +89,6 @@ bindkey "^[[B" down-line-or-beginning-search # Down
 
 # ==============================================================================
 # aliases
-
-# ledger
-if [ -x "$(command -v ledger)" ]; then
-  alias budg='ledger bal ^Asset:Budget'
-  alias acc='ledger bal ^Asset:Liquid ^Liability -R'
-else
-  echo "* ledger is not installed."
-fi
-
-# nvim
-if [ -x "$(command -v nvim)" ]; then
-  alias v='nvim'
-  alias vi='nvim'
-  alias vim='nvim'
-else
-  echo "* nvim is not installed."
-fi
-
-if [ -x "$(command -v tree)" ]; then
-  # colorize by default
-  alias tree='tree -C'
-else
-  echo "* tree is not installed."
-fi
 
 alias ls="ls -FG"
 
