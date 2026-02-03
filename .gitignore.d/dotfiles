@@ -4,9 +4,10 @@
 !/.gitconfig
 !/.gitignore_global
 !/.ignore
+
+!/.bashrc
 !/.inputrc
 !/.profile
-!/.zshrc
 
 !/.config/
 !/.config/ghostty/

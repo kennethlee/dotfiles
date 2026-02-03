@@ -11,7 +11,7 @@ fi
 # fzf
 if [ -x "$(command -v fzf)" ]; then
   # Set up fzf key bindings and fuzzy completion
-  eval "$(fzf --zsh)"
+  eval "$(fzf --bash)"
 
   alias fz="fzf"
 
@@ -66,9 +66,6 @@ fi
 # ==============================================================================
 # keys
 
-# vim
-bindkey -v
-
 # after
 export KEYTIMEOUT=1
 
@@ -84,4 +81,4 @@ alias crumb='jobs -p | xargs kill -15'
 # last
 
 # starship
-eval "$(starship init zsh)"
+eval "$(starship init bash)"
