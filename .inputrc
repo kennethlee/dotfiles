@@ -1,22 +1,70 @@
-# vi
-
+# TURN ON VIM (E.G. FOR READLINE)
 set editing-mode vi
 
-# ==============================================================================
-# normal mode
+# SHOW THE VIM MODE IN THE PROMPT (COMMAND OR INSERT)
+set show-mode-in-prompt on
+# bash >= v4.4
+# set vi-cmd-mode-string "[N]"
+# set vi-ins-mode-string "[I]"
+set vi-cmd-mode-string "❮"
+set vi-ins-mode-string "❯"
 
-set keymap vi-command
+# sets the readline to display possible completions using different colors
+# to indicate filetypes determined from env variable LC_COLORS
+set colored-stats on
 
-# ==============================================================================
-# insert mode
-
-set keymap vi-insert
+# Completions listed immediately instead of bell when completing word has more than one possible completion
+set show-all-if-ambiguous on
 
 # tab completion ignores case
 set completion-ignore-case on
+set menu-complete-display-prefix on
 
-# show all completions as soon as I press tab, even if there's more than one
-set show-all-if-ambiguous on
+# Enables the display of only the first 5 unique characters from a group of file or directory name suggestions when you utilize tab-completion.
+# If multiple entries share a long prefix, they will be condensed using ellipses, making it easier to locate and choose the desired item.
+# Useful in directories containing many similarly named images or documents.
+set completion-prefix-display-length 5
 
-# ==============================================================================
+# Set the bell-style to be visible only i.e no audio played on command completion
+# can also be set to none
+set bell-style visible
 
+#vi mode settings
+$if mode=vi
+  set keymap vi-command
+
+  # entering "v" in normal mode does unintended things; disable it.
+  # leave this just below `set keymap vi-command`.
+  # https://askubuntu.com/a/1317506
+  "v":redraw-current-line
+
+  # ----------------------------------------------------------------------------
+  # keys
+
+  "D":kill-line
+  "C":"Da"
+  "dw":kill-word
+  "dd":kill-whole-line
+  "db":backward-kill-word
+  "cc":"ddi"
+  "cw":"dwi"
+  "cb":"dbi"
+
+  "daw":"lbdW"
+  "yaw":"lbyW"
+  "caw":"lbcW"
+
+  "diw":"lbdw"
+  "yiw":"lbyw"
+  "ciw":"lbcw"
+
+  "gg":beginning-of-history
+  "G":end-of-history
+
+  # ----------------------------------------------------------------------------
+
+  # switch to block cursor before executing a command
+  # leave this at the very bottom.
+  set keymap vi-insert
+  RETURN: "\e\n"
+$endif
