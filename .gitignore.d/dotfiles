@@ -3,7 +3,6 @@
 !/.gitignore.d/dotfiles
 !/.gitconfig
 !/.gitignore_global
-!/.ignore
 
 !/.bashrc
 !/.inputrc
