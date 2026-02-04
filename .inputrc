@@ -1,3 +1,6 @@
+# https://man.archlinux.org/man/readline.3#keyseq
+set keyseq-timeout 1
+
 # TURN ON VIM (E.G. FOR READLINE)
 set editing-mode vi
 
