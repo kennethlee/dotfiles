@@ -12,8 +12,3 @@
 !/.config/
 !/.config/ghostty/
 !/.config/ghostty/config
-
-!/projects/
-!/projects/javascript/
-!/projects/javascript/.eslintrc.js
-!/projects/javascript/.prettierrc
