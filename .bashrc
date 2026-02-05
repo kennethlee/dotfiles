@@ -71,13 +71,6 @@ else
   echo "* Not found: nvim."
 fi
 
-if [ -x "$(command -v tree)" ]; then
-  # colorize by default
-  alias tree='tree -C'
-else
-  echo "* Not found: tree."
-fi
-
 # ==============================================================================
 # aliases
 
