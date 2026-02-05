@@ -1,4 +1,4 @@
-# tools
+# tools {{{1
 
 if ! [ -x "$(command -v bat)" ]; then
   echo "* Not found: bat."
@@ -71,16 +71,16 @@ else
   echo "* Not found: nvim."
 fi
 
-# ==============================================================================
-# aliases
+# ------------------------------------------------------------------------------
+# aliases {{{1
 
 alias ls="ls -FG"
 
 # kill all background processes
 alias crumb='jobs -p | xargs kill -15'
 
-# ==============================================================================
-# last
+# ------------------------------------------------------------------------------
+# last {{{1
 
 # starship. keep this at the bottom.
 if [ -x "$(command -v starship)" ]; then
@@ -88,3 +88,6 @@ if [ -x "$(command -v starship)" ]; then
 else
   echo "* Not found: starship."
 fi
+
+# ------------------------------------------------------------------------------
+# }}}1
