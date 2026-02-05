@@ -5,9 +5,9 @@ if ! [ -x "$(command -v bat)" ]; then
 fi
 
 if [ -x "$(command -v eza)" ]; then
-  alias ls2="eza -lTag --level=2 --icons=always"
-  alias ls3="eza -lTag --level=3 --icons=always"
-  alias ls4="eza -lTag --level=4 --icons=always"
+  alias z2="eza -lTag --level=2 --icons=always"
+  alias z3="eza -lTag --level=3 --icons=always"
+  alias z4="eza -lTag --level=4 --icons=always"
 else
   echo "* Not found: eza."
 fi
