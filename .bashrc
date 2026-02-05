@@ -74,5 +74,9 @@ alias crumb='jobs -p | xargs kill -15'
 # ==============================================================================
 # last
 
-# starship
-eval "$(starship init bash)"
+# starship. keep this at the bottom.
+if [ -x "$(command -v starship)" ]; then
+  eval "$(starship init bash)"
+else
+  echo "* Not found: starship."
+fi
