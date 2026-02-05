@@ -1,5 +1,17 @@
 # tools
 
+if ! [ -x "$(command -v bat)" ]; then
+  echo "* Not found: bat."
+fi
+
+if [ -x "$(command -v eza)" ]; then
+  alias ls2="eza -lTag --level=2 --icons=always"
+  alias ls3="eza -lTag --level=3 --icons=always"
+  alias ls4="eza -lTag --level=4 --icons=always"
+else
+  echo "* Not found: eza."
+fi
+
 if ! [ -x "$(command -v fd)" ]; then
   echo "* Not found: fd."
 fi
@@ -16,9 +28,12 @@ if [ -x "$(command -v fzf)" ]; then
   alias fz="fzf"
 
   # feed fzf with fd (if installed); otherwise, with rg.
+  bat="bat --style=numbers --color=always {}"
+  eza="eza -Tag --icons=always --color=always {}"
+  fd="fd --type f --hidden --no-require-git --strip-cwd-prefix"
+  rg="rg --files --hidden --no-require-git --follow"
   FZF_DEFAULT_COMMAND=""
-  fd='fd --type f --hidden --no-require-git --strip-cwd-prefix'
-  rg='rg --files --hidden --no-require-git --follow'
+
   if [ -x "$(command -v fd)" ]; then
     FZF_DEFAULT_COMMAND=$fd
   elif ! [ -x "$(command -v fd)" ] && [ -x "$(command -v rg)" ]; then
@@ -35,7 +50,7 @@ if [ -x "$(command -v fzf)" ]; then
     --bind 'focus:transform-header:file --brief {}'
     # use '?' to toggle file preview
     --preview-window=hidden --bind '?:toggle-preview'
-    --preview '([[ -f {} ]] && (bat --style=numbers --color=always {} || cat {})) || ([[ -d {} ]] && (tree -C {} | less)) || echo {} 2> /dev/null | head -200'
+    --preview '([[ -f {} ]] && (${bat} || cat {})) || ([[ -d {} ]] && (${eza} | less)) || echo {} 2> /dev/null | head -200'
   "
 else
   echo "* Not found: fzf."
