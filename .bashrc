@@ -28,7 +28,7 @@ if [ -x "$(command -v fzf)" ]; then
   alias fz="fzf"
 
   # feed fzf with fd (if installed); otherwise, with rg.
-  bat="bat --style=numbers --color=always {}"
+  bat="bat --style=numbers --color=always --theme=base16 {}"
   eza="eza -Tag --icons=always --color=always {}"
   fd="fd --type f --hidden --no-require-git --strip-cwd-prefix"
   rg="rg --files --hidden --no-require-git --follow"
