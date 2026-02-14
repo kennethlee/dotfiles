@@ -1,23 +1,24 @@
 # tools {{{1
 
 if ! [ -x "$(command -v bat)" ]; then
-  echo "* Not found: bat."
+  echo '* Not found: bat.'
 fi
 
 if [ -x "$(command -v eza)" ]; then
-  alias z2="eza -lTag --level=2 --icons=always"
-  alias z3="eza -lTag --level=3 --icons=always"
-  alias z4="eza -lTag --level=4 --icons=always"
+  alias z1='eza -lTag --level=1 --icons=always'
+  alias z2='eza -lTag --level=2 --icons=always'
+  alias z3='eza -lTag --level=3 --icons=always'
+  alias z4='eza -lTag --level=4 --icons=always'
 else
-  echo "* Not found: eza."
+  echo '* Not found: eza.'
 fi
 
 if ! [ -x "$(command -v fd)" ]; then
-  echo "* Not found: fd."
+  echo '* Not found: fd.'
 fi
 
 if ! [ -x "$(command -v rg)" ]; then
-  echo "* Not found: rg."
+  echo '* Not found: rg.'
 fi
 
 # fzf
@@ -25,14 +26,14 @@ if [ -x "$(command -v fzf)" ]; then
   # Set up fzf key bindings and fuzzy completion
   eval "$(fzf --bash)"
 
-  alias fz="fzf"
+  alias fz='fzf'
 
   # feed fzf with fd (if installed); otherwise, with rg.
-  bat="bat --style=numbers --color=always --theme=base16 {}"
-  eza="eza -Tag --icons=always --color=always {}"
-  fd="fd --type f --hidden --no-require-git --strip-cwd-prefix"
-  rg="rg --files --hidden --no-require-git --follow"
-  FZF_DEFAULT_COMMAND=""
+  bat='bat --style=numbers --color=always --theme=base16 {}'
+  eza='eza -Tag --icons=always --color=always {}'
+  fd='fd --type f --hidden --no-require-git --strip-cwd-prefix'
+  rg='rg --files --hidden --no-require-git --follow'
+  FZF_DEFAULT_COMMAND=''
 
   if [ -x "$(command -v fd)" ]; then
     FZF_DEFAULT_COMMAND=$fd
@@ -53,14 +54,14 @@ if [ -x "$(command -v fzf)" ]; then
     --preview '([[ -f {} ]] && (${bat} || cat {})) || ([[ -d {} ]] && (${eza} | less)) || echo {} 2> /dev/null | head -200'
   "
 else
-  echo "* Not found: fzf."
+  echo '* Not found: fzf.'
 fi
 
 if [ -x "$(command -v ledger)" ]; then
   alias budg='ledger bal ^Asset:Budget'
   alias acc='ledger bal ^Asset:Liquid ^Liability -R'
 else
-  echo "* Not found: ledger."
+  echo '* Not found: ledger.'
 fi
 
 if [ -x "$(command -v nvim)" ]; then
@@ -68,13 +69,13 @@ if [ -x "$(command -v nvim)" ]; then
   alias vi='nvim'
   alias vim='nvim'
 else
-  echo "* Not found: nvim."
+  echo '* Not found: nvim.'
 fi
 
 # ------------------------------------------------------------------------------
 # aliases {{{1
 
-alias ls="ls -FG"
+alias ls='ls -FG'
 
 # kill all background processes
 alias crumb='jobs -p | xargs kill -15'
@@ -86,7 +87,7 @@ alias crumb='jobs -p | xargs kill -15'
 if [ -x "$(command -v starship)" ]; then
   eval "$(starship init bash)"
 else
-  echo "* Not found: starship."
+  echo '* Not found: starship.'
 fi
 
 # ------------------------------------------------------------------------------
