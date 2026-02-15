@@ -5,10 +5,10 @@ if ! [ -x "$(command -v bat)" ]; then
 fi
 
 if [ -x "$(command -v eza)" ]; then
-  alias z1='eza -lTag --level=1 --icons=always'
-  alias z2='eza -lTag --level=2 --icons=always'
-  alias z3='eza -lTag --level=3 --icons=always'
-  alias z4='eza -lTag --level=4 --icons=always'
+  alias z1='eza -lTag --level=1 --icons=always --time-style=long-iso'
+  alias z2='eza -lTag --level=2 --icons=always --time-style=long-iso'
+  alias z3='eza -lTag --level=3 --icons=always --time-style=long-iso'
+  alias z4='eza -lTag --level=4 --icons=always --time-style=long-iso'
 else
   printf '%s\n' '* Not found: eza.'
 fi
