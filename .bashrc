@@ -1,7 +1,7 @@
 # tools {{{1
 
 if ! [ -x "$(command -v bat)" ]; then
-  echo '* Not found: bat.'
+  printf '%s\n' '* Not found: bat.'
 fi
 
 if [ -x "$(command -v eza)" ]; then
@@ -10,15 +10,15 @@ if [ -x "$(command -v eza)" ]; then
   alias z3='eza -lTag --level=3 --icons=always'
   alias z4='eza -lTag --level=4 --icons=always'
 else
-  echo '* Not found: eza.'
+  printf '%s\n' '* Not found: eza.'
 fi
 
 if ! [ -x "$(command -v fd)" ]; then
-  echo '* Not found: fd.'
+  printf '%s\n' '* Not found: fd.'
 fi
 
 if ! [ -x "$(command -v rg)" ]; then
-  echo '* Not found: rg.'
+  printf '%s\n' '* Not found: rg.'
 fi
 
 # fzf
@@ -40,10 +40,10 @@ if [ -x "$(command -v fzf)" ]; then
   elif ! [ -x "$(command -v fd)" ] && [ -x "$(command -v rg)" ]; then
     FZF_DEFAULT_COMMAND=$rg
   else
-    echo 'Raw fzf.'
+    printf '%s\n' 'Raw fzf.'
   fi
   export FZF_DEFAULT_COMMAND
-  # command echo "FZF_DEFAULT_COMMAND=$FZF_DEFAULT_COMMAND"
+  # printf '%s\n' "FZF_DEFAULT_COMMAND=$FZF_DEFAULT_COMMAND"
 
   export FZF_DEFAULT_OPTS="
     -m
@@ -54,14 +54,14 @@ if [ -x "$(command -v fzf)" ]; then
     --preview '([[ -f {} ]] && (${bat} || cat {})) || ([[ -d {} ]] && (${eza} | less)) || echo {} 2> /dev/null | head -200'
   "
 else
-  echo '* Not found: fzf.'
+  printf '%s\n' '* Not found: fzf.'
 fi
 
 if [ -x "$(command -v ledger)" ]; then
   alias budg='ledger bal ^Asset:Budget'
   alias acc='ledger bal ^Asset:Liquid ^Liability -R'
 else
-  echo '* Not found: ledger.'
+  printf '%s\n' '* Not found: ledger.'
 fi
 
 if [ -x "$(command -v nvim)" ]; then
@@ -69,7 +69,7 @@ if [ -x "$(command -v nvim)" ]; then
   alias vi='nvim'
   alias vim='nvim'
 else
-  echo '* Not found: nvim.'
+  printf '%s\n' '* Not found: nvim.'
 fi
 
 # ------------------------------------------------------------------------------
@@ -87,7 +87,7 @@ alias crumb='jobs -p | xargs kill -15'
 if [ -x "$(command -v starship)" ]; then
   eval "$(starship init bash)"
 else
-  echo '* Not found: starship.'
+  printf '%s\n' '* Not found: starship.'
 fi
 
 # ------------------------------------------------------------------------------
