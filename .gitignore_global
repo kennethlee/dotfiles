@@ -6,6 +6,7 @@
 .DS_Store
 
 /.cache
+/.dropbox
 /.local
 /.nave
 /.npm
@@ -44,6 +45,8 @@ Temporary Items
 
 # ==============================================================================
 # vim
+
+# https://github.com/github/gitignore/blob/main/Global/Vim.gitignore
 
 .viminfo
 

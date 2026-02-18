@@ -3,8 +3,8 @@
 # or possibly as a more targeted alternative to 'disable=SC2039'.
 shell=sh
 
-# Always allow ShellCheck to open arbitrary files from 'source' statements.
-external-sources=true
-
 # Enable all optional checks
 enable=all
+
+# Always allow ShellCheck to open arbitrary files from 'source' statements.
+external-sources=true
