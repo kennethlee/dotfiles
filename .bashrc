@@ -24,7 +24,7 @@ fi
 # fzf
 if command -v fzf >/dev/null 2>&1; then
   # Set up fzf key bindings and fuzzy completion
-  eval "$(fzf --bash)"
+  eval "$(fzf --bash || true)"
 
   alias fz='fzf'
 
@@ -85,7 +85,7 @@ alias crumb='jobs -p | xargs kill -15'
 
 # starship. keep this at the bottom.
 if command -v starship >/dev/null 2>&1; then
-  eval "$(starship init bash)"
+  eval "$(starship init bash || true)"
 else
   printf '%s\n' '* Not found: starship.'
 fi
