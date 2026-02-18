@@ -1,0 +1,10 @@
+# Overrides the shell detected from the shebang.
+# This is useful for files meant to be included (and thus lacking a shebang),
+# or possibly as a more targeted alternative to 'disable=SC2039'.
+shell=sh
+
+# Always allow ShellCheck to open arbitrary files from 'source' statements.
+external-sources=true
+
+# Enable all optional checks
+enable=all
