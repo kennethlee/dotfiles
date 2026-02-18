@@ -7,6 +7,7 @@ bashrc
 cmd
 DNF5
 eza
+fd
 fzf
 Ghostty
 gitignore
@@ -26,6 +27,7 @@ packadd
 plugin
 quickfix
 Rofi
+rg
 runit
 systemd
 vimrc
