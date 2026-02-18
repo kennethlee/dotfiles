@@ -1,6 +1,8 @@
 # Overrides the shell detected from the shebang.
-# This is useful for files meant to be included (and thus lacking a shebang),
-# or possibly as a more targeted alternative to 'disable=SC2039'.
+# Valid values are sh, bash, dash, ksh, and busybox.
+# The default is to deduce the shell from the file's shell directive, shebang,
+# or .bash/.bats/.dash/.ksh extension, in that order.
+# sh refers to POSIX sh (not the system's), and will warn of portability issues.
 shell=sh
 
 # Enable all optional checks
