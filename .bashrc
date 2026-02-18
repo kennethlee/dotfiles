@@ -1,10 +1,10 @@
-# tools {{{1
+# commands {{{1
 
-if ! [[ -x $(command -v bat) ]]; then
+if ! command -v bat >/dev/null 2>&1; then
   printf '%s\n' '* Not found: bat.'
 fi
 
-if [[ -x $(command -v eza) ]]; then
+if command -v eza >/dev/null 2>&1; then
   alias z1='eza -lTag --level=1 --icons=always --time-style=long-iso'
   alias z2='eza -lTag --level=2 --icons=always --time-style=long-iso'
   alias z3='eza -lTag --level=3 --icons=always --time-style=long-iso'
@@ -13,16 +13,16 @@ else
   printf '%s\n' '* Not found: eza.'
 fi
 
-if ! [[ -x $(command -v fd) ]]; then
+if ! command -v fd >/dev/null 2>&1; then
   printf '%s\n' '* Not found: fd.'
 fi
 
-if ! [[ -x $(command -v rg) ]]; then
+if ! command -v rg >/dev/null 2>&1; then
   printf '%s\n' '* Not found: rg.'
 fi
 
 # fzf
-if [[ -x $(command -v fzf) ]]; then
+if command -v fzf >/dev/null 2>&1; then
   # Set up fzf key bindings and fuzzy completion
   eval "$(fzf --bash)"
 
@@ -35,15 +35,15 @@ if [[ -x $(command -v fzf) ]]; then
   rg='rg --files --hidden --no-require-git --follow'
   FZF_DEFAULT_COMMAND=''
 
-  if [[ -x $(command -v fd) ]]; then
-    FZF_DEFAULT_COMMAND=$fd
-  elif ! [[ -x $(command -v fd) ]] && [[ -x $(command -v rg) ]]; then
-    FZF_DEFAULT_COMMAND=$rg
+  if command -v fd >/dev/null 2>&1; then
+    FZF_DEFAULT_COMMAND=${fd}
+  elif ! command -v fd >/dev/null 2>&1 && command -v rg >/dev/null 2>&1; then
+    FZF_DEFAULT_COMMAND=${rg}
   else
     printf '%s\n' 'Raw fzf.'
   fi
   export FZF_DEFAULT_COMMAND
-  # printf '%s\n' "FZF_DEFAULT_COMMAND=$FZF_DEFAULT_COMMAND"
+  # printf '%s\n' "FZF_DEFAULT_COMMAND=${FZF_DEFAULT_COMMAND}"
 
   export FZF_DEFAULT_OPTS="
     -m
@@ -57,14 +57,14 @@ else
   printf '%s\n' '* Not found: fzf.'
 fi
 
-if [[ -x $(command -v ledger) ]]; then
+if command -v ledger >/dev/null 2>&1; then
   alias budg='ledger bal ^Asset:Budget'
   alias acc='ledger bal ^Asset:Liquid ^Liability -R'
 else
   printf '%s\n' '* Not found: ledger.'
 fi
 
-if [[ -x $(command -v nvim) ]]; then
+if command -v nvim >/dev/null 2>&1; then
   alias v='nvim'
   alias vi='nvim'
   alias vim='nvim'
@@ -84,7 +84,7 @@ alias crumb='jobs -p | xargs kill -15'
 # last {{{1
 
 # starship. keep this at the bottom.
-if [[ -x $(command -v starship) ]]; then
+if command -v starship >/dev/null 2>&1; then
   eval "$(starship init bash)"
 else
   printf '%s\n' '* Not found: starship.'
