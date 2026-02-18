@@ -79,6 +79,9 @@ alias ls='ls -FG'
 # kill all background processes
 alias crumb='jobs -p | xargs kill -15'
 
+# print all env vars, plus shell vars
+alias printsh='(set -o posix ; set) | less'
+
 # ------------------------------------------------------------------------------
 # last {{{1
 
