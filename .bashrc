@@ -29,21 +29,20 @@ if command -v fzf >/dev/null 2>&1; then
   alias fz='fzf'
 
   # feed fzf with fd (if installed); otherwise, with rg.
-  bat='bat --style=numbers --color=always --theme=base16 {}'
-  eza='eza -Tag --icons=always --color=always {}'
-  fd='fd --type f --hidden --no-require-git --strip-cwd-prefix'
-  rg='rg --files --hidden --no-require-git --follow'
+  fzf_bat='bat --style=numbers --color=always --theme=base16 {}'
+  fzf_eza='eza -Tag --icons=always --color=always {}'
+  fzf_fd='fd --type f --hidden --no-require-git --strip-cwd-prefix'
+  fzf_rg='rg --files --hidden --no-require-git --follow'
   FZF_DEFAULT_COMMAND=''
 
   if command -v fd >/dev/null 2>&1; then
-    FZF_DEFAULT_COMMAND=${fd}
+    FZF_DEFAULT_COMMAND=${fzf_fd}
   elif ! command -v fd >/dev/null 2>&1 && command -v rg >/dev/null 2>&1; then
-    FZF_DEFAULT_COMMAND=${rg}
+    FZF_DEFAULT_COMMAND=${fzf_rg}
   else
     printf '%s\n' 'Raw fzf.'
   fi
   export FZF_DEFAULT_COMMAND
-  # printf '%s\n' "FZF_DEFAULT_COMMAND=${FZF_DEFAULT_COMMAND}"
 
   export FZF_DEFAULT_OPTS="
     -m
@@ -51,7 +50,7 @@ if command -v fzf >/dev/null 2>&1; then
     --bind 'focus:transform-header:file --brief {}'
     # use '?' to toggle file preview
     --preview-window=hidden --bind '?:toggle-preview'
-    --preview '([[ -f {} ]] && (${bat} || cat {})) || ([[ -d {} ]] && (${eza} | less)) || echo {} 2> /dev/null | head -200'
+    --preview '([[ -f {} ]] && (${fzf_bat} || cat {})) || ([[ -d {} ]] && (${fzf_eza} | less)) || echo {} 2> /dev/null | head -200'
   "
 else
   printf '%s\n' '* Not found: fzf.'
