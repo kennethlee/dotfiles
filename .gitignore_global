@@ -1,17 +1,24 @@
-# Run `git config --global core.excludesfile ~/.gitignore_global`
-
-# ==============================================================================
 # mac
 
 # https://github.com/github/gitignore/blob/main/Global/macOS.gitignore
 
 # General
 .DS_Store
-__MACOSX/
-.AppleDouble
-.LSOverride
-Icon[
-]
+
+/.cache
+/.local
+/.nave
+/.npm
+/.Trash
+/Applications
+/Desktop
+/Downloads
+/Dropbox
+/Library/*
+/Movies
+/Music
+/Pictures
+/Public
 
 # Thumbnails
 ._*
@@ -38,7 +45,7 @@ Temporary Items
 # ==============================================================================
 # vim
 
-# https://github.com/github/gitignore/blob/main/Global/Vim.gitignore
+.viminfo
 
 # Swap
 [._]*.s[a-v][a-z]
@@ -87,16 +94,6 @@ zig-out/
 *.exe
 *.o
 *.so
-
-# media
-*.epub
-*.flac
-*.m4a
-*.mkv
-*.mp3
-*.mp4
-*.pdf
-*.wav
 
 # logfiles, tempfiles
 /.log
