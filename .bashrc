@@ -5,10 +5,10 @@ if ! command -v bat >/dev/null 2>&1; then
 fi
 
 if command -v eza >/dev/null 2>&1; then
-  alias z1='eza -lTag --level=1 --icons=always --time-style=long-iso'
-  alias z2='eza -lTag --level=2 --icons=always --time-style=long-iso'
-  alias z3='eza -lTag --level=3 --icons=always --time-style=long-iso'
-  alias z4='eza -lTag --level=4 --icons=always --time-style=long-iso'
+  alias e1='eza -lTag --level=1 --icons=always --time-style=long-iso'
+  alias e2='eza -lTag --level=2 --icons=always --time-style=long-iso'
+  alias e3='eza -lTag --level=3 --icons=always --time-style=long-iso'
+  alias e4='eza -lTag --level=4 --icons=always --time-style=long-iso'
 else
   printf '%s\n' '* Not found: eza.'
 fi
@@ -76,10 +76,13 @@ fi
 
 alias ls='ls -FG'
 
+# decent native substitute for eza.
+alias ll="ls -GHhl -D '%FT%T'"
+
 # kill all background processes
 alias crumb='jobs -p | xargs kill -15'
 
-# print all env vars, plus shell vars
+# print all env vars PLUS shell vars
 alias printsh='(set -o posix ; set) | less'
 
 # ------------------------------------------------------------------------------
