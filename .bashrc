@@ -17,10 +17,6 @@ if ! command -v fd >/dev/null 2>&1; then
   printf '%s\n' '* Not found: fd.'
 fi
 
-if ! command -v rg >/dev/null 2>&1; then
-  printf '%s\n' '* Not found: rg.'
-fi
-
 # fzf
 if command -v fzf >/dev/null 2>&1; then
   # Set up fzf key bindings and fuzzy completion
@@ -69,6 +65,19 @@ if command -v nvim >/dev/null 2>&1; then
   alias vim='nvim'
 else
   printf '%s\n' '* Not found: nvim.'
+fi
+
+if command -v ugrep >/dev/null 2>&1; then
+  # -R: --dereference-recursive
+  # -I: --ignore-binary
+  # -n: --line-number
+  # -k: --column-number
+  # -j: --smart-case
+  # -u: --ungroup
+  alias ugrep='ugrep --smart-case'
+  alias lg='ugrep -RInk -j -u --hidden --ignore-files --tabs=1'
+else
+  printf '%s\n' '* Not found: ugrep.'
 fi
 
 # ------------------------------------------------------------------------------
