@@ -1,3 +1,12 @@
+# general
+
+# bash_history
+unset HISTFILE
+# HISTCONTROL=ignoreboth:erasedups
+# HISTIGNORE='echo *':'rm *':'rmdir *':'sudo *'
+# PROMPT_COMMAND='history -a'
+
+# ------------------------------------------------------------------------------
 # commands {{{1
 
 if ! command -v bat >/dev/null 2>&1; then
@@ -83,16 +92,19 @@ fi
 # ------------------------------------------------------------------------------
 # aliases {{{1
 
+# kill all background processes
+alias crumb='jobs -p | xargs kill -15'
+
 alias ls='ls -FG'
 
 # decent native substitute for eza.
 alias ll="ls -GHhl -D '%FT%T'"
 
-# kill all background processes
-alias crumb='jobs -p | xargs kill -15'
-
 # print all env vars PLUS shell vars
 alias printsh='(set -o posix ; set) | less'
+
+alias vb='v ~/.bashrc'
+alias vv='v ~/.config/nvim/init.lua'
 
 # ------------------------------------------------------------------------------
 # last {{{1
