@@ -5,12 +5,12 @@ set keyseq-timeout 1
 set editing-mode vi
 
 # SHOW THE VIM MODE IN THE PROMPT (COMMAND OR INSERT)
+# bash >= v4.4 only.
 set show-mode-in-prompt on
-# bash >= v4.4
-set vi-cmd-mode-string "NOR "
-set vi-ins-mode-string "INS "
-# set vi-cmd-mode-string "❮"
-# set vi-ins-mode-string "❯"
+set vi-cmd-mode-string \1\033[1;35m\2CMD \1\033[m\2
+set vi-ins-mode-string \1\033[1;32m\2INS \1\033[m\2
+# set vi-cmd-mode-string \1\033[1;35m\2❮ \1\033[m\2
+# set vi-ins-mode-string \1\033[1;32m\2❯ \1\033[m\2
 
 # sets the readline to display possible completions using different colors
 # to indicate filetypes determined from env variable LC_COLORS
