@@ -17,7 +17,14 @@ set vi-ins-mode-string \1\033[1;32m\2INS \1\033[m\2
 set colored-stats on
 
 # Completions listed immediately instead of bell when completing word has more than one possible completion
+# note: this also allows for single tab completion (as opposed to requiring a double tab).
 set show-all-if-ambiguous on
+
+# suffix each returned file completion with a character denoting its type, in a similar way to ls(1) with -F or --classify.
+set visible-stats on
+
+# turns off the use of the internal pager when returning long completion lists.
+set page-completions off
 
 # tab completion ignores case
 set completion-ignore-case on

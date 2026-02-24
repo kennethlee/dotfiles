@@ -1,7 +1,9 @@
-# general
+# general {{{1
 
-# bash_history
+# disable bash history
 unset HISTFILE
+
+## bash_history (in case you want it)
 # HISTCONTROL=ignoreboth:erasedups
 # HISTIGNORE='echo *':'rm *':'rmdir *':'sudo *'
 # PROMPT_COMMAND='history -a'
@@ -105,6 +107,24 @@ alias printsh='(set -o posix ; set) | less'
 
 alias vb='v ~/.bashrc'
 alias vv='v ~/.config/nvim/init.lua'
+
+# ------------------------------------------------------------------------------
+# completion {{{1
+
+# bash-completion@2
+if type brew >/dev/null 2>&1; then
+  # shellcheck disable=2154
+  if [ -r "${HOMEBREW_PREFIX}/etc/profile.d/bash_completion.sh" ]; then
+    # shellcheck disable=1091
+    . "${HOMEBREW_PREFIX}/etc/profile.d/bash_completion.sh"
+  else
+    for COMPLETION in "${HOMEBREW_PREFIX}/etc/bash_completion.d/"*
+    do
+      # shellcheck disable=1090
+      [ -r "${COMPLETION}" ] && . "${COMPLETION}"
+    done
+  fi
+fi
 
 # ------------------------------------------------------------------------------
 # last {{{1
