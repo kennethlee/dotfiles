@@ -12,5 +12,6 @@
 !/.shellcheckrc
 
 !/.config/
+!/.config/starship.toml
 !/.config/ghostty/
 !/.config/ghostty/config

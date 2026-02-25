@@ -1,7 +1,7 @@
 # UI ---------------------------------------------------------------------------
 
 font-family = "PragmataPro VF Mono Liga"
-font-size = 15
+font-size = 16
 window-title-font-family = "PragmataPro VF Mono Liga"
 theme = "Tomorrow Night Eighties"
 # theme = "Melange Dark"

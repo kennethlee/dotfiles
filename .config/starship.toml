@@ -1,0 +1,106 @@
+'$schema' = 'https://starship.rs/config-schema.json'
+
+format = """
+$os\
+$username\
+$directory\
+$git_branch\
+$git_status\
+$c\
+$nodejs\
+$vcsh\
+$zig\
+$time\
+$cmd_duration\
+$line_break\
+$jobs\
+$character
+"""
+
+palette = 'base16_eighties'
+
+[os.symbols]
+Macos = '󰀵'
+Linux = '󰌽'
+Gentoo = '󰣨'
+Fedora = '󰣛'
+Void = ''
+
+[os]
+disabled = false
+style = 'fg:purple'
+format = '[$symbol ]($style)'
+
+[username]
+show_always = true
+style_user = 'fg:purple'
+style_root = 'fg:bold red'
+format = '[$user    ]($style)'
+
+[directory]
+disabled = false
+truncation_symbol = '…/'
+style = 'fg:white'
+format = '[$path    ]($style)'
+
+[git_branch]
+symbol = ''
+format = '[[$symbol $branch ](fg:yellow)]($style)'
+
+[git_status]
+format = '[[($all_status$ahead_behind    )](fg:yellow)]($style)'
+
+[nodejs]
+symbol = ''
+format = '[[$symbol( $version)    ](fg:green)]($style)'
+
+[c]
+symbol = ''
+format = '[[$symbol( $version)    ](fg:green)]($style)'
+
+[vcsh]
+symbol = '🆅 '
+format = '[[$symbol( $repo)    ](fg:green)]($style)'
+
+[zig]
+symbol = ''
+format = '[[$symbol( $version)    ](fg:green)]($style)'
+
+[time]
+disabled = false
+time_format = '%R'
+format = '[[ $time](fg:sapphire)]($style)'
+
+[cmd_duration]
+show_milliseconds = true
+format = '     in $duration'
+style = 'fg:purple'
+disabled = false
+show_notifications = true
+min_time_to_notify = 45000
+
+[line_break]
+disabled = false
+
+[jobs]
+number_threshold = 1
+format = '[$symbol]($style)'
+
+[character]
+disabled = false
+success_symbol = '[❯](bold fg:bold green)'
+error_symbol = '[❯](bold fg:bold red)'
+vimcmd_symbol = '[❮](bold fg:bold green)'
+vimcmd_replace_one_symbol = '[❮](bold fg:bold purple)'
+vimcmd_replace_symbol = '[❮](bold fg:bold purple)'
+vimcmd_visual_symbol = '[❮](bold fg:bold yellow)'
+
+[palettes.base16_eighties]
+red = '#f2777a' # base16
+peach = '#d27b53' # base16
+yellow ='#ffcc66' # base16
+green = '#99cc99' # base16
+sapphire = '#6699cc' # base16
+purple = '#cc99cc' # base16
+black = '#393939' # base16
+white = '#e8e6df' # base16
