@@ -1,6 +1,7 @@
 '$schema' = 'https://starship.rs/config-schema.json'
 
 format = """
+[](black)\
 $os\
 $username\
 $directory\
@@ -11,6 +12,7 @@ $nodejs\
 $vcsh\
 $zig\
 $time\
+[](fg:black)\
 $cmd_duration\
 $line_break\
 $jobs\
@@ -28,56 +30,57 @@ Void = ''
 
 [os]
 disabled = false
-style = 'fg:purple'
+style = 'fg:purple bg:black'
 format = '[$symbol ]($style)'
 
 [username]
 show_always = true
-style_user = 'fg:purple'
-style_root = 'fg:bold red'
+style_user = 'fg:purple bg:black'
+style_root = 'fg:bold red bg:black'
 format = '[$user ]($style)'
 
 [directory]
 disabled = false
 truncation_symbol = '…/'
-style = 'fg:cyan'
+style = 'fg:blue bg:black'
 format = '[ $path ]($style)'
 
 [git_branch]
 symbol = ''
-format = '[[ $symbol $branch ](fg:yellow)]($style)'
+format = '[[ $symbol $branch ](fg:yellow bg:black)]($style)'
 
 [git_status]
-format = '[[($all_status$ahead_behind )](fg:red)]($style)'
+format = '[[($all_status$ahead_behind )](fg:red bg:black)]($style)'
 
 [nodejs]
 symbol = ''
-format = '[[ $symbol( $version) ](fg:bright-black)]($style)'
+format = '[[ $symbol( $version) ](fg:black-black bg:black)]($style)'
 
 [c]
 symbol = ''
-format = '[[ $symbol( $version) ](fg:bright-black)]($style)'
+format = '[[ $symbol( $version) ](fg:bright-black bg:black)]($style)'
 
 [vcsh]
 symbol = '🆅 '
-format = '[[ $symbol( $repo) ](fg:bright-black)]($style)'
+format = '[[ $symbol( $repo) ](fg:bright-black bg:black)]($style)'
 
 [zig]
 symbol = ''
-format = '[[ $symbol( $version) ](fg:bright-black)]($style)'
+format = '[[ $symbol( $version) ](fg:bright-black bg:black)]($style)'
 
 [time]
 disabled = false
 time_format = '%R'
-format = '[[  $time](fg:blue)]($style)'
+style = 'fg:cyan bg:black'
+format = '[  $time]($style)'
 
 [cmd_duration]
 show_milliseconds = true
-format = '[   in $duration]($style)'
-style = 'bright-black'
 disabled = false
 show_notifications = true
 min_time_to_notify = 45000
+style = 'bright-black'
+format = '[  in $duration]($style)'
 
 [line_break]
 disabled = false
