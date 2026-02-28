@@ -40,7 +40,7 @@ format = '[$user ]($style)'
 [directory]
 disabled = false
 truncation_symbol = '…/'
-style = 'fg:white'
+style = 'fg:cyan'
 format = '[ $path ]($style)'
 
 [git_branch]
@@ -48,33 +48,33 @@ symbol = ''
 format = '[[ $symbol $branch ](fg:yellow)]($style)'
 
 [git_status]
-format = '[[($all_status$ahead_behind )](fg:yellow)]($style)'
+format = '[[($all_status$ahead_behind )](fg:red)]($style)'
 
 [nodejs]
 symbol = ''
-format = '[[ $symbol( $version) ](fg:green)]($style)'
+format = '[[ $symbol( $version) ](fg:bright-black)]($style)'
 
 [c]
 symbol = ''
-format = '[[ $symbol( $version) ](fg:green)]($style)'
+format = '[[ $symbol( $version) ](fg:bright-black)]($style)'
 
 [vcsh]
 symbol = '🆅 '
-format = '[[ $symbol( $repo) ](fg:green)]($style)'
+format = '[[ $symbol( $repo) ](fg:bright-black)]($style)'
 
 [zig]
 symbol = ''
-format = '[[ $symbol( $version) ](fg:green)]($style)'
+format = '[[ $symbol( $version) ](fg:bright-black)]($style)'
 
 [time]
 disabled = false
 time_format = '%R'
-format = '[[  $time](fg:sapphire)]($style)'
+format = '[[  $time](fg:blue)]($style)'
 
 [cmd_duration]
 show_milliseconds = true
-format = '   in $duration'
-style = 'fg:purple'
+format = '[   in $duration]($style)'
+style = 'bright-black'
 disabled = false
 show_notifications = true
 min_time_to_notify = 45000
@@ -96,11 +96,13 @@ vimcmd_replace_symbol = '[❮](bold fg:bold purple)'
 vimcmd_visual_symbol = '[❮](bold fg:bold yellow)'
 
 [palettes.base16_eighties]
-red = '#f2777a'
-peach = '#d27b53'
-yellow ='#ffcc66'
-green = '#99cc99'
-sapphire = '#6699cc'
-purple = '#cc99cc'
 black = '#393939'
-white = '#e8e6df'
+blue = '#6699CC'
+cyan = '#66CCCC'
+green = '#99CC99'
+orange = '#F99157'
+purple = '#CC99CC'
+red = '#F2777A'
+white = '#D3D0C8'
+yellow ='#FFCC66'
+bright-black = '#747369'
