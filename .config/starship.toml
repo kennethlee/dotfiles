@@ -1,7 +1,6 @@
 '$schema' = 'https://starship.rs/config-schema.json'
 
 format = """
-[](black)\
 $os\
 $username\
 $directory\
@@ -12,7 +11,7 @@ $nodejs\
 $vcsh\
 $zig\
 $time\
-[](fg:black)\
+[](fg:background-color)\
 $cmd_duration\
 $line_break\
 $jobs\
@@ -30,56 +29,56 @@ Void = ''
 
 [os]
 disabled = false
-style = 'fg:purple bg:black'
-format = '[$symbol ]($style)'
+style = 'fg:purple bg:background-color'
+format = '[ $symbol]($style)'
 
 [username]
 show_always = true
-style_user = 'fg:purple bg:black'
-style_root = 'fg:bold red bg:black'
-format = '[$user ]($style)'
+style_user = 'fg:purple bg:background-color'
+style_root = 'fg:bold red bg:background-color'
+format = '[ $user ]($style)'
 
 [directory]
 disabled = false
 truncation_symbol = '…/'
-style = 'fg:blue bg:black'
+style = 'fg:blue bg:background-color'
 format = '[ $path ]($style)'
 
 [git_branch]
 symbol = ''
-format = '[[ $symbol $branch ](fg:yellow bg:black)]($style)'
+format = '[[ $symbol $branch ](fg:yellow bg:background-color)]($style)'
 
 [git_status]
-format = '[[($all_status$ahead_behind )](fg:red bg:black)]($style)'
+format = '[[($all_status$ahead_behind )](fg:red bg:background-color)]($style)'
 
 [nodejs]
 symbol = ''
-format = '[[ $symbol( $version) ](fg:black-black bg:black)]($style)'
+format = '[[ $symbol( $version) ](fg:comment-color bg:background-color)]($style)'
 
 [c]
 symbol = ''
-format = '[[ $symbol( $version) ](fg:bright-black bg:black)]($style)'
+format = '[[ $symbol( $version) ](fg:comment-color bg:background-color)]($style)'
 
 [vcsh]
 symbol = '🆅 '
-format = '[[ $symbol( $repo) ](fg:bright-black bg:black)]($style)'
+format = '[[ $symbol( $repo) ](fg:comment-color bg:background-color)]($style)'
 
 [zig]
 symbol = ''
-format = '[[ $symbol( $version) ](fg:bright-black bg:black)]($style)'
+format = '[[ $symbol( $version) ](fg:comment-color bg:background-color)]($style)'
 
 [time]
 disabled = false
 time_format = '%R'
-style = 'fg:cyan bg:black'
-format = '[  $time]($style)'
+style = 'fg:cyan bg:background-color'
+format = '[  $time ]($style)'
 
 [cmd_duration]
 show_milliseconds = true
 disabled = false
 show_notifications = true
 min_time_to_notify = 45000
-style = 'bright-black'
+style = 'comment-color'
 format = '[  in $duration]($style)'
 
 [line_break]
@@ -99,7 +98,7 @@ vimcmd_replace_symbol = '[❮](bold fg:bold purple)'
 vimcmd_visual_symbol = '[❮](bold fg:bold yellow)'
 
 [palettes.base16_eighties]
-black = '#393939'
+background-color = '#393939'
 blue = '#6699CC'
 cyan = '#66CCCC'
 green = '#99CC99'
@@ -108,4 +107,4 @@ purple = '#CC99CC'
 red = '#F2777A'
 white = '#D3D0C8'
 yellow ='#FFCC66'
-bright-black = '#747369'
+comment-color = '#A09F93'
