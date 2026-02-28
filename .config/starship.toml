@@ -40,7 +40,11 @@ format = '[ $user ]($style)'
 
 [directory]
 disabled = false
+fish_style_pwd_dir_length = 1
+truncation_length = 5
+truncate_to_repo = true
 truncation_symbol = '…/'
+read_only_style = 'fg:bold red'
 style = 'fg:blue bg:background-color'
 format = '[ $path ]($style)'
 
