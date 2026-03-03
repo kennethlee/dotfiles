@@ -1,9 +1,20 @@
 # general {{{1
 
+# handy shortcuts:
+# Ctrl-r: search command history (via an fzf search, in my case)
+# Ctrl-l: clear screen except anything unexecuted in current line.
+
+if command -v nvim >/dev/null 2>&1; then
+  export EDITOR=nvim
+  alias v='nvim'
+else
+  export EDITOR=vim
+fi
+
 # disable bash history
 unset HISTFILE
 
-## bash_history (in case you want it)
+# # bash_history (in case you want it)
 # HISTCONTROL=ignoreboth:erasedups
 # HISTIGNORE='echo *':'rm *':'rmdir *':'sudo *'
 # PROMPT_COMMAND='history -a'
@@ -35,21 +46,13 @@ if command -v fzf >/dev/null 2>&1; then
 
   alias fz='fzf'
 
-  # feed fzf with fd (if installed); otherwise, with rg.
   fzf_bat='bat --style=numbers --color=always --theme=base16 {}'
   fzf_eza='eza -Tag --icons=always --color=always {}'
   fzf_fd='fd --type f --hidden --no-require-git --strip-cwd-prefix'
-  fzf_rg='rg --files --hidden --no-require-git --follow'
-  FZF_DEFAULT_COMMAND=''
 
   if command -v fd >/dev/null 2>&1; then
-    FZF_DEFAULT_COMMAND=${fzf_fd}
-  elif ! command -v fd >/dev/null 2>&1 && command -v rg >/dev/null 2>&1; then
-    FZF_DEFAULT_COMMAND=${fzf_rg}
-  else
-    printf '%s\n' 'Raw fzf.'
+    export FZF_DEFAULT_COMMAND="${fzf_fd}"
   fi
-  export FZF_DEFAULT_COMMAND
 
   export FZF_DEFAULT_OPTS="
     -m
@@ -68,14 +71,6 @@ if command -v ledger >/dev/null 2>&1; then
   alias acc='ledger bal ^Asset:Liquid ^Liability -R'
 else
   printf '%s\n' '* Not found: ledger.'
-fi
-
-if command -v nvim >/dev/null 2>&1; then
-  alias v='nvim'
-  alias vi='nvim'
-  alias vim='nvim'
-else
-  printf '%s\n' '* Not found: nvim.'
 fi
 
 if command -v ugrep >/dev/null 2>&1; then
@@ -111,7 +106,7 @@ alias vv='v ~/.config/nvim/init.lua'
 # ------------------------------------------------------------------------------
 # completion {{{1
 
-# bash-completion@2
+# bash-completion@2 (for Bash 4.2+; use `bash-completion` for older versions)
 if type brew >/dev/null 2>&1; then
   # shellcheck disable=2154
   if [ -r "${HOMEBREW_PREFIX}/etc/profile.d/bash_completion.sh" ]; then
