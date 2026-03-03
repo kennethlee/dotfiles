@@ -7,10 +7,10 @@ set editing-mode vi
 # SHOW THE VIM MODE IN THE PROMPT (COMMAND OR INSERT)
 # bash >= v4.4 only.
 set show-mode-in-prompt on
-set vi-cmd-mode-string \1\033[1;35m\2CMD \1\033[m\2
-set vi-ins-mode-string \1\033[1;32m\2INS \1\033[m\2
-# set vi-cmd-mode-string \1\033[1;35m\2❮ \1\033[m\2
-# set vi-ins-mode-string \1\033[1;32m\2❯ \1\033[m\2
+set vi-cmd-mode-string \1\033[1;35m\2 CMD \1\033[m\2
+set vi-ins-mode-string \1\033[1;32m\2 INS \1\033[m\2
+# set vi-cmd-mode-string \1\033[1;35m\2 ❮ \1\033[m\2
+# set vi-ins-mode-string \1\033[1;32m\2 ❯ \1\033[m\2
 
 # sets the readline to display possible completions using different colors
 # to indicate filetypes determined from env variable LC_COLORS
@@ -43,14 +43,7 @@ set bell-style visible
 $if mode=vi
   set keymap vi-command
 
-  # entering "v" in normal mode does unintended things; disable it.
-  # leave this just below `set keymap vi-command`.
-  # https://askubuntu.com/a/1317506
-  "v":redraw-current-line
-
-  # ----------------------------------------------------------------------------
   # keys
-
   "D":kill-line
   "C":"Da"
   "dw":kill-word
@@ -59,19 +52,14 @@ $if mode=vi
   "cc":"ddi"
   "cw":"dwi"
   "cb":"dbi"
-
   "daw":"lbdW"
   "yaw":"lbyW"
   "caw":"lbcW"
-
   "diw":"lbdw"
   "yiw":"lbyw"
   "ciw":"lbcw"
-
   "gg":beginning-of-history
   "G":end-of-history
-
-  # ----------------------------------------------------------------------------
 
   # switch to block cursor before executing a command
   # leave this at the very bottom.
