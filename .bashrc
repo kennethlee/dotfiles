@@ -22,21 +22,13 @@ unset HISTFILE
 # ------------------------------------------------------------------------------
 # commands {{{1
 
-if ! command -v bat >/dev/null 2>&1; then
-  printf '%s\n' '* Not found: bat.'
-fi
-
 if command -v eza >/dev/null 2>&1; then
   alias e1='eza -lTag --level=1 --icons=always --time-style=long-iso'
   alias e2='eza -lTag --level=2 --icons=always --time-style=long-iso'
   alias e3='eza -lTag --level=3 --icons=always --time-style=long-iso'
   alias e4='eza -lTag --level=4 --icons=always --time-style=long-iso'
 else
-  printf '%s\n' '* Not found: eza.'
-fi
-
-if ! command -v fd >/dev/null 2>&1; then
-  printf '%s\n' '* Not found: fd.'
+  printf '%s\n' 'eza: command not found'
 fi
 
 # fzf
@@ -63,14 +55,14 @@ if command -v fzf >/dev/null 2>&1; then
     --preview '([[ -f {} ]] && (${fzf_bat} || cat {})) || ([[ -d {} ]] && (${fzf_eza} | less)) || echo {} 2> /dev/null | head -200'
   "
 else
-  printf '%s\n' '* Not found: fzf.'
+  printf '%s\n' 'fzf: command not found'
 fi
 
 if command -v ledger >/dev/null 2>&1; then
   alias budg='ledger bal ^Asset:Budget'
   alias acc='ledger bal ^Asset:Liquid ^Liability -R'
 else
-  printf '%s\n' '* Not found: ledger.'
+  printf '%s\n' 'ledger: command not found'
 fi
 
 if command -v ugrep >/dev/null 2>&1; then
@@ -83,7 +75,7 @@ if command -v ugrep >/dev/null 2>&1; then
   alias ugrep='ugrep --smart-case'
   alias lg='ugrep -RInk -j -u --hidden --ignore-files --tabs=1'
 else
-  printf '%s\n' '* Not found: ugrep.'
+  printf '%s\n' 'ugrep: command not found'
 fi
 
 # ------------------------------------------------------------------------------
@@ -128,7 +120,7 @@ fi
 if command -v starship >/dev/null 2>&1; then
   eval "$(starship init bash || true)"
 else
-  printf '%s\n' '* Not found: starship.'
+  printf '%s\n' 'starship: command not found'
 fi
 
 # ------------------------------------------------------------------------------
