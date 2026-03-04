@@ -52,15 +52,16 @@ format = '[ $path ]($style)'
 symbol = ''
 format = '[[ $symbol $branch ](fg:yellow bg:background-color)]($style)'
 
+# [status symbols](https://starship.rs/config/#options-37)
 [git_status]
 format = '[[($all_status$ahead_behind )](fg:red bg:background-color)]($style)'
 
-[nodejs]
-symbol = ''
-format = '[[ $symbol( $version) ](fg:comment-color bg:background-color)]($style)'
-
 [c]
 symbol = ''
+format = '[[ $symbol( $version) ](fg:comment-color bg:background-color)]($style)'
+
+[nodejs]
+symbol = ''
 format = '[[ $symbol( $version) ](fg:comment-color bg:background-color)]($style)'
 
 [vcsh]
