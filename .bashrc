@@ -1,9 +1,5 @@
 # general {{{1
 
-# handy shortcuts:
-# Ctrl-r: search command history (via an fzf search, in my case)
-# Ctrl-l: clear screen except anything unexecuted in current line.
-
 if command -v nvim >/dev/null 2>&1; then
   export EDITOR=nvim
   alias v='nvim'
@@ -79,13 +75,21 @@ else
 fi
 
 # ------------------------------------------------------------------------------
-# aliases {{{1
+# aliases / keys {{{1
+
+# handy shortcuts:
+# Ctrl-r: search command history (via an fzf search, in my case)
+# Ctrl-l: clear screen except anything unexecuted in current line.
 
 # kill all background processes
 alias crumb='jobs -p | xargs kill -15'
 
-alias ls='ls -FG'
+# -O: --remote-name
+# -L: --location
+# -f: --fail
+alias colf='curl -OLf'
 
+alias ls='ls -FG'
 # decent native substitute for eza.
 alias ll="ls -GHhl -D '%FT%T'"
 

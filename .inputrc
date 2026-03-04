@@ -1,16 +1,15 @@
 # https://man.archlinux.org/man/readline.3#keyseq
 set keyseq-timeout 1
 
-# TURN ON VIM (E.G. FOR READLINE)
+# turn on vim for readline
 set editing-mode vi
 
-# SHOW THE VIM MODE IN THE PROMPT (COMMAND OR INSERT)
-# bash >= v4.4 only.
+# show the current vim mode in the prompt (bash >= v4.4 only)
 set show-mode-in-prompt on
-set vi-cmd-mode-string \1\033[1;35m\2 CMD \1\033[m\2
-set vi-ins-mode-string \1\033[1;32m\2 INS \1\033[m\2
-# set vi-cmd-mode-string \1\033[1;35m\2 ❮ \1\033[m\2
-# set vi-ins-mode-string \1\033[1;32m\2 ❯ \1\033[m\2
+set vi-cmd-mode-string "\1\033[1;35m\2 CMD \1\033[m\2"
+set vi-ins-mode-string "\1\033[1;32m\2 INS \1\033[m\2"
+# set vi-cmd-mode-string "\1\033[1;35m\2 ❮ \1\033[m\2"
+# set vi-ins-mode-string "\1\033[1;32m\2 ❯ \1\033[m\2"
 
 # sets the readline to display possible completions using different colors
 # to indicate filetypes determined from env variable LC_COLORS
