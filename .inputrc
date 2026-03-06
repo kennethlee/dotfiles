@@ -6,7 +6,7 @@ set editing-mode vi
 
 # show the current vim mode in the prompt (bash >= v4.4 only)
 set show-mode-in-prompt on
-set vi-cmd-mode-string "\1\033[1;35m\2 CMD \1\033[m\2"
+set vi-cmd-mode-string "\1\033[1;35m\2 NOR \1\033[m\2"
 set vi-ins-mode-string "\1\033[1;32m\2 INS \1\033[m\2"
 # set vi-cmd-mode-string "\1\033[1;35m\2 ❮ \1\033[m\2"
 # set vi-ins-mode-string "\1\033[1;32m\2 ❯ \1\033[m\2"
@@ -37,6 +37,9 @@ set completion-prefix-display-length 5
 # Set the bell-style to be visible only i.e no audio played on command completion
 # can also be set to none
 set bell-style visible
+
+# Opt-t to transpose the two preceding words (Insert Mode)
+"\et":transpose-words
 
 #vi mode settings
 $if mode=vi
