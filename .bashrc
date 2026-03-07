@@ -1,3 +1,10 @@
+# helpers {{{1
+
+has_command() { command -v "$1" >/dev/null 2>&1; }
+warn() { printf '%s\n' "$*" >/dev/null 2>&1; }
+die() { printf '%s\n' "$*" >/dev/null 2>&1; exit 1; }
+
+# ------------------------------------------------------------------------------
 # base {{{1
 
 if command -v nvim >/dev/null 2>&1; then
@@ -31,72 +38,9 @@ if type brew >/dev/null 2>&1; then
 fi
 
 # ------------------------------------------------------------------------------
-# commands {{{1
-
-if ! command -v eza >/dev/null 2>&1; then
-  printf '%s\n' 'eza: command not found'
-else
-  alias e1='eza -lTag --level=1 --icons=always --time-style=long-iso'
-  alias e2='eza -lTag --level=2 --icons=always --time-style=long-iso'
-  alias e3='eza -lTag --level=3 --icons=always --time-style=long-iso'
-  alias e4='eza -lTag --level=4 --icons=always --time-style=long-iso'
-fi
-
-if ! command -v fzf >/dev/null 2>&1; then
-  printf '%s\n' 'fzf: command not found'
-else
-  alias fz='fzf'
-  # Unset FZF_CTRL_T_COMMAND + set up fzf key bindings and fuzzy completion
-  FZF_CTRL_T_COMMAND='' eval "$(fzf --bash || true)"
-
-  fzf_fd='fd --type f --hidden --no-require-git --strip-cwd-prefix'
-  if command -v fd >/dev/null 2>&1; then
-    export FZF_DEFAULT_COMMAND="${fzf_fd}"
-  fi
-
-  fzf_bat='bat --style=numbers --color=always --theme=base16 {}'
-  fzf_eza='eza -Tag --icons=always --color=always {}'
-  export FZF_DEFAULT_OPTS="
-    -m
-    --style=full
-    --bind 'focus:transform-header:file --brief {}'
-    # use '?' to toggle file preview
-    --preview-window=hidden --bind '?:toggle-preview'
-    --preview '([[ -f {} ]] && (${fzf_bat} || cat {})) || ([[ -d {} ]] && (${fzf_eza} | less)) || echo {} 2> /dev/null | head -200'
-  "
-fi
-
-if ! command -v ledger >/dev/null 2>&1; then
-  printf '%s\n' 'ledger: command not found'
-else
-  alias budg='ledger bal ^Asset:Budget'
-  alias acc='ledger bal ^Asset:Liquid ^Liability -R'
-fi
-
-if ! command -v ugrep >/dev/null 2>&1; then
-  printf '%s\n' 'ugrep: command not found'
-else
-  alias ugrep='ugrep --smart-case'
-  # -R: --dereference-recursive
-  # -I: --ignore-binary
-  # -n: --line-number
-  # -k: --column-number
-  # -j: --smart-case
-  # -u: --ungroup
-  alias lg='ugrep -RInk -j -u --hidden --ignore-files --tabs=1'
-fi
-
-# starship. keep this at the bottom.
-if ! command -v starship >/dev/null 2>&1; then
-  printf '%s\n' 'starship: command not found'
-else
-  eval "$(starship init bash || true)"
-fi
-
-# ------------------------------------------------------------------------------
 # aliases / keys {{{1
 
-# handy shortcuts:
+# HANDY SHORTCUTS:
 # Ctrl-r: search command history (via an fzf search, in my case)
 # Ctrl-l: clear screen except anything unexecuted in current line.
 
@@ -117,6 +61,54 @@ alias printsh='(set -o posix ; set) | less'
 
 alias vb='v ~/.bashrc'
 alias vv='v ~/.config/nvim/init.lua'
+
+has_command 'eza' || warn 'eza not found'
+alias e1='eza -lTag --level=1 --icons=always --time-style=long-iso'
+alias e2='eza -lTag --level=2 --icons=always --time-style=long-iso'
+alias e3='eza -lTag --level=3 --icons=always --time-style=long-iso'
+alias e4='eza -lTag --level=4 --icons=always --time-style=long-iso'
+
+has_command 'ledger' || warn 'ledger not found'
+alias budg='ledger bal ^Asset:Budget'
+alias acc='ledger bal ^Asset:Liquid ^Liability -R'
+
+has_command 'ugrep' || warn 'ugrep not found'
+alias ugrep='ugrep --smart-case'
+# -R: --dereference-recursive
+# -I: --ignore-binary
+# -n: --line-number
+# -k: --column-number
+# -j: --smart-case
+# -u: --ungroup
+alias lg='ugrep -RInk -j -u --hidden --ignore-files --tabs=1'
+
+# ------------------------------------------------------------------------------
+# commands {{{1
+
+has_command 'fd' || warn 'fd not found'
+
+has_command 'fzf' || warn 'fzf not found'
+alias fz='fzf'
+# Unset FZF_CTRL_T_COMMAND + set up fzf key bindings and fuzzy completion
+FZF_CTRL_T_COMMAND='' eval "$(fzf --bash || true)"
+fzf_fd='fd --type f --hidden --no-require-git --strip-cwd-prefix'
+if command -v fd >/dev/null 2>&1; then
+  export FZF_DEFAULT_COMMAND="${fzf_fd}"
+fi
+fzf_bat='bat --style=numbers --color=always --theme=base16 {}'
+fzf_eza='eza -Tag --icons=always --color=always {}'
+export FZF_DEFAULT_OPTS="
+  -m
+  --style=full
+  --bind 'focus:transform-header:file --brief {}'
+  # use '?' to toggle file preview
+  --preview-window=hidden --bind '?:toggle-preview'
+  --preview '([[ -f {} ]] && (${fzf_bat} || cat {})) || ([[ -d {} ]] && (${fzf_eza} | less)) || echo {} 2> /dev/null | head -200'
+"
+
+# starship. keep this at the bottom.
+has_command 'starship' || warn 'starship not found'
+eval "$(starship init bash || true)"
 
 # ------------------------------------------------------------------------------
 # }}}1
