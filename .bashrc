@@ -98,7 +98,6 @@ alias lg='ugrep -RInk -j -u --hidden --ignore-files --tabs=1'
 has_command 'fd' || warn 'fd not found'
 
 load_config_fzf() {
-  has_command 'fzf' || warn 'fzf not found'
   alias fz='fzf'
   # Unset FZF_CTRL_T_COMMAND + set up fzf key bindings and fuzzy completion
   FZF_CTRL_T_COMMAND='' eval "$(fzf --bash || true)"
@@ -119,7 +118,7 @@ load_config_fzf() {
     --preview '([[ -f {} ]] && (${fzf_bat} || cat {})) || ([[ -d {} ]] && (${fzf_eza} | less)) || echo {} 2> /dev/null | head -200'
   "
 }
-load_config_fzf
+if has_command 'fzf'; then load_config_fzf; fi
 
 # starship. keep this at the bottom.
 eval "$(starship init bash || true)"
