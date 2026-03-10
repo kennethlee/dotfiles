@@ -1,18 +1,7 @@
 # helpers {{{1
 
 has_command() { command -v "$1" >/dev/null 2>&1; }
-
 warn() { printf '%s\n' "$*" >/dev/null 2>&1; }
-
-die() {
-  local code=1
-  if [ "$1" =~ ^-[0-9]+$ ]; then
-    code=${1#-}
-    shift
-  fi
-  printf '%s\n' "$*" >&2
-  exit "${code}"
-}
 
 # ------------------------------------------------------------------------------
 # base {{{1
@@ -118,7 +107,8 @@ load_config_fzf() {
     --preview '([[ -f {} ]] && (${fzf_bat} || cat {})) || ([[ -d {} ]] && (${fzf_eza} | less)) || echo {} 2> /dev/null | head -200'
   "
 }
-if has_command 'fzf'; then load_config_fzf; fi
+has_command 'fzf' || warn 'fzf not found'
+has_command 'fzf' && load_config_fzf
 
 # starship. keep this at the bottom.
 eval "$(starship init bash || true)"
