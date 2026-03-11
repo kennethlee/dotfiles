@@ -21,6 +21,10 @@ unset HISTFILE
 # HISTIGNORE='echo *':'rm *':'rmdir *':'sudo *'
 # PROMPT_COMMAND='history -a'
 
+# prevent overwriting file on stdout redirection
+# use `>|` to force redirection to an existing file
+set -o noclobber
+
 # bash-completion@2 (for Bash 4.2+; use `bash-completion` for older versions)
 if type brew >/dev/null 2>&1; then
   # shellcheck disable=2154
@@ -86,6 +90,7 @@ alias lg='ugrep -RInk -j -u --hidden --ignore-files --tabs=1'
 
 has_command 'fd' || warn 'fd not found'
 
+has_command 'fzf' || warn 'fzf not found'
 load_config_fzf() {
   alias fz='fzf'
   # Unset FZF_CTRL_T_COMMAND + set up fzf key bindings and fuzzy completion
@@ -107,7 +112,6 @@ load_config_fzf() {
     --preview '([[ -f {} ]] && (${fzf_bat} || cat {})) || ([[ -d {} ]] && (${fzf_eza} | less)) || echo {} 2> /dev/null | head -200'
   "
 }
-has_command 'fzf' || warn 'fzf not found'
 has_command 'fzf' && load_config_fzf
 
 # starship. keep this at the bottom.
