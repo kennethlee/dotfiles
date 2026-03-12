@@ -19,6 +19,7 @@ $character
 """
 
 palette = 'base16_eighties'
+# palette = 'melange_dark'
 
 [os.symbols]
 Macos = '󰀵'
@@ -58,19 +59,19 @@ format = '[[($all_status$ahead_behind )](fg:red bg:background-color)]($style)'
 
 [c]
 symbol = ''
-format = '[[ $symbol( $version) ](fg:comment-color bg:background-color)]($style)'
+format = '[[ $symbol( $version) ](fg:foreground-color bg:background-color)]($style)'
 
 [nodejs]
 symbol = ''
-format = '[[ $symbol( $version) ](fg:comment-color bg:background-color)]($style)'
+format = '[[ $symbol( $version) ](fg:foreground-color bg:background-color)]($style)'
 
 [vcsh]
 symbol = '🆅 '
-format = '[[ $symbol( $repo) ](fg:comment-color bg:background-color)]($style)'
+format = '[[ $symbol( $repo) ](fg:foreground-color bg:background-color)]($style)'
 
 [zig]
 symbol = ''
-format = '[[ $symbol( $version) ](fg:comment-color bg:background-color)]($style)'
+format = '[[ $symbol( $version) ](fg:foreground-color bg:background-color)]($style)'
 
 [time]
 disabled = false
@@ -83,7 +84,7 @@ show_milliseconds = true
 disabled = false
 show_notifications = true
 min_time_to_notify = 45000
-style = 'comment-color'
+style = 'foreground-color'
 format = '[  in $duration]($style)'
 
 [line_break]
@@ -110,6 +111,16 @@ green = '#99CC99'
 orange = '#F99157'
 purple = '#CC99CC'
 red = '#F2777A'
-white = '#D3D0C8'
 yellow ='#FFCC66'
-comment-color = '#A09F93'
+foreground-color = '#A09F93'
+
+[palettes.melange_dark]
+background-color = '#403A36'
+blue = '#A3A9CE'
+cyan = '#89B3B6'
+green = '#85B695'
+orange = '#D47766'
+purple = '#CF9BC2'
+red = '#BD8183'
+yellow ='#EBC06D'
+foreground-color = '#C1A78E'
