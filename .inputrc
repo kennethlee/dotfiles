@@ -43,28 +43,25 @@ set bell-style visible
 
 #vi mode settings
 $if mode=vi
-  set keymap vi-command
-
-  # keys
-  "D":kill-line
-  "C":"Da"
-  "dw":kill-word
-  "dd":kill-whole-line
-  "db":backward-kill-word
-  "cc":"ddi"
-  "cw":"dwi"
-  "cb":"dbi"
-  "daw":"lbdW"
-  "yaw":"lbyW"
-  "caw":"lbcW"
-  "diw":"lbdw"
-  "yiw":"lbyw"
-  "ciw":"lbcw"
-  "gg":beginning-of-history
-  "G":end-of-history
-
-  # switch to block cursor before executing a command
-  # leave this at the very bottom.
-  set keymap vi-insert
-  RETURN: "\e\n"
+    set keymap vi-command
+    "D":kill-line
+    "C":"Da"
+    "dw":kill-word
+    "dd":kill-whole-line
+    "db":backward-kill-word
+    "cc":"ddi"
+    "cw":"dwi"
+    "cb":"dbi"
+    "daw":"lbdW"
+    "yaw":"lbyW"
+    "caw":"lbcW"
+    "diw":"lbdw"
+    "yiw":"lbyw"
+    "ciw":"lbcw"
+    "gg":beginning-of-history
+    "G":end-of-history
+    # switch to block cursor before executing a command
+    # leave this at the very bottom.
+    set keymap vi-insert
+    RETURN: "\e\n"
 $endif

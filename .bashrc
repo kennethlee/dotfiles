@@ -7,10 +7,10 @@ warn() { printf '%s\n' "$*" >/dev/null 2>&1; }
 # base {{{1
 
 if command -v nvim >/dev/null 2>&1; then
-  export EDITOR=nvim
-  alias v='nvim'
+    export EDITOR=nvim
+    alias v='nvim'
 else
-  export EDITOR=vim
+    export EDITOR=vim
 fi
 
 # disable bash history
@@ -27,17 +27,17 @@ set -o noclobber
 
 # bash-completion@2 (for Bash 4.2+; use `bash-completion` for older versions)
 if type brew >/dev/null 2>&1; then
-  # shellcheck disable=2154
-  if [ -r "${HOMEBREW_PREFIX}/etc/profile.d/bash_completion.sh" ]; then
-    # shellcheck disable=1091
-    . "${HOMEBREW_PREFIX}/etc/profile.d/bash_completion.sh"
-  else
-    for COMPLETION in "${HOMEBREW_PREFIX}/etc/bash_completion.d/"*
-    do
-      # shellcheck disable=1090
-      [ -r "${COMPLETION}" ] && . "${COMPLETION}"
-    done
-  fi
+    # shellcheck disable=2154
+    if [ -r "${HOMEBREW_PREFIX}/etc/profile.d/bash_completion.sh" ]; then
+        # shellcheck disable=1091
+        . "${HOMEBREW_PREFIX}/etc/profile.d/bash_completion.sh"
+    else
+        for COMPLETION in "${HOMEBREW_PREFIX}/etc/bash_completion.d/"*
+        do
+            # shellcheck disable=1090
+            [ -r "${COMPLETION}" ] && . "${COMPLETION}"
+        done
+    fi
 fi
 
 # ------------------------------------------------------------------------------
@@ -92,25 +92,25 @@ has_command 'fd' || warn 'fd not found'
 
 has_command 'fzf' || warn 'fzf not found'
 load_config_fzf() {
-  alias fz='fzf'
-  # Unset FZF_CTRL_T_COMMAND + set up fzf key bindings and fuzzy completion
-  FZF_CTRL_T_COMMAND='' eval "$(fzf --bash || true)"
+    alias fz='fzf'
+    # Unset FZF_CTRL_T_COMMAND + set up fzf key bindings and fuzzy completion
+    FZF_CTRL_T_COMMAND='' eval "$(fzf --bash || true)"
 
-  local fzf_fd='fd --type f --hidden --no-require-git --strip-cwd-prefix'
-  if command -v fd >/dev/null 2>&1; then
-    export FZF_DEFAULT_COMMAND="${fzf_fd}"
-  fi
+    local fzf_fd='fd --type f --hidden --no-require-git --strip-cwd-prefix'
+    if command -v fd >/dev/null 2>&1; then
+        export FZF_DEFAULT_COMMAND="${fzf_fd}"
+    fi
 
-  local fzf_bat='bat --style=numbers --color=always --theme=base16 {}'
-  local fzf_eza='eza -Tag --icons=always --color=always {}'
-  export FZF_DEFAULT_OPTS="
-    -m
-    --style=full
-    --bind 'focus:transform-header:file --brief {}'
-    # use '?' to toggle file preview
-    --preview-window=hidden --bind '?:toggle-preview'
-    --preview '([[ -f {} ]] && (${fzf_bat} || cat {})) || ([[ -d {} ]] && (${fzf_eza} | less)) || echo {} 2> /dev/null | head -200'
-  "
+    local fzf_bat='bat --style=numbers --color=always --theme=base16 {}'
+    local fzf_eza='eza -Tag --icons=always --color=always {}'
+    export FZF_DEFAULT_OPTS="
+        -m
+        --style=full
+        --bind 'focus:transform-header:file --brief {}'
+        # use '?' to toggle file preview
+        --preview-window=hidden --bind '?:toggle-preview'
+        --preview '([[ -f {} ]] && (${fzf_bat} || cat {})) || ([[ -d {} ]] && (${fzf_eza} | less)) || echo {} 2> /dev/null | head -200'
+    "
 }
 has_command 'fzf' && load_config_fzf
 
