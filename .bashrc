@@ -72,8 +72,13 @@ alias e3='eza -lTag --level=3 --icons=always --time-style=long-iso'
 alias e4='eza -lTag --level=4 --icons=always --time-style=long-iso'
 
 has_command 'ledger' || warn 'ledger not found'
-alias budg='ledger bal ^Asset:Budget'
-alias acc='ledger bal ^Asset:Liquid ^Liability -R'
+alias budg='ledger balance ^Asset:Budget'
+alias acc='ledger balance --real ^Asset:Liquid ^Liability'
+
+# has_command 'hledger' || warn 'hledger not found'
+# alias hbu='hledger balancesheet --tree ^Asset:Budget'
+# alias hac='hledger balancesheet --tree --real ^Asset:Liquid ^Liability'
+# alias hch='hledger check'
 
 has_command 'ugrep' || warn 'ugrep not found'
 alias ugrep='ugrep --smart-case'
