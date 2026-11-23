@@ -72,8 +72,10 @@ alias e3='eza -lTag --level=3 --icons=always --time-style=long-iso'
 alias e4='eza -lTag --level=4 --icons=always --time-style=long-iso'
 
 has_command 'ledger' || warn 'ledger not found'
+alias acc='ledger balance ^Asset:Liquid ^Liability --real'
+# rolling 12-month avg of expenses
+alias avg="ledger balance ^Expense --begin '12 months ago' --amount 'amount / 12' --empty"
 alias budg='ledger balance ^Asset:Budget'
-alias acc='ledger balance --real ^Asset:Liquid ^Liability'
 
 # has_command 'hledger' || warn 'hledger not found'
 # alias hbu='hledger balancesheet --tree ^Asset:Budget'
