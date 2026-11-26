@@ -1,5 +1,5 @@
 # https://man.archlinux.org/man/readline.3#keyseq
-set keyseq-timeout 1
+set keyseq-timeout 120
 
 # turn on vim for readline
 set editing-mode vi
@@ -65,3 +65,15 @@ $if mode=vi
     set keymap vi-insert
     RETURN: "\e\n"
 $endif
+
+# bindings, ledger
+"lac": "ledger balance --real ^Asset:Liquid ^Liability"
+"lav": "ledger balance --empty --begin '\''12 months ago'\'' --amount '\''amount / 12'\'' ^Expense"
+"lbu": "ledger balance ^Asset:Budget"
+";aa": "ledger register --real --tail "
+";bb": "ledger register --limit \"not real\" --tail "
+
+# # bindings, hledger
+# "hac": "hledger balancesheet --real --tree ^Asset:Liquid ^Liability"
+# "hbu": "hledger balancesheet --tree ^Asset:Budget"
+# "hch": "hledger check"
