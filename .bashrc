@@ -98,20 +98,20 @@ load_config_fzf() {
     # Unset FZF_CTRL_T_COMMAND + set up fzf key bindings and fuzzy completion
     FZF_CTRL_T_COMMAND='' eval "$(fzf --bash || true)"
 
-    local fzf_fd='fd --type f --hidden --no-require-git --strip-cwd-prefix'
+    _load_config_fzf_fd='fd --type f --hidden --no-require-git --strip-cwd-prefix'
     if command -v fd >/dev/null 2>&1; then
-        export FZF_DEFAULT_COMMAND="${fzf_fd}"
+        export FZF_DEFAULT_COMMAND="${_load_config_fzf_fd}"
     fi
 
-    local fzf_bat='bat --style=numbers --color=always --theme=base16 {}'
-    local fzf_eza='eza -Tag --icons=always --color=always {}'
+    _load_config_fzf_bat='bat --style=numbers --color=always --theme=base16 {}'
+    _load_config_fzf_eza='eza -Tag --icons=always --color=always {}'
     export FZF_DEFAULT_OPTS="
         -m
         --style=full
         --bind 'focus:transform-header:file --brief {}'
         # use '?' to toggle file preview
         --preview-window=hidden --bind '?:toggle-preview'
-        --preview '([[ -f {} ]] && (${fzf_bat} || cat {})) || ([[ -d {} ]] && (${fzf_eza} | less)) || echo {} 2> /dev/null | head -200'
+        --preview '([[ -f {} ]] && (${_load_config_fzf_bat} || cat {})) || ([[ -d {} ]] && (${_load_config_fzf_eza} | less)) || echo {} 2> /dev/null | head -200'
     "
 }
 has_command 'fzf' && load_config_fzf
