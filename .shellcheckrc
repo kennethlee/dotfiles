@@ -10,6 +10,3 @@ enable=all
 
 # Always allow ShellCheck to open arbitrary files from 'source' statements.
 external-sources=true
-
-# # allow for some concessions (bashisms)
-# disable=3043 # `local` is undefined.

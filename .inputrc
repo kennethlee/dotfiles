@@ -11,28 +11,19 @@ set vi-ins-mode-string "\1\033[1;32m\2 INS \1\033[m\2"
 # set vi-cmd-mode-string "\1\033[1;35m\2 ❮ \1\033[m\2"
 # set vi-ins-mode-string "\1\033[1;32m\2 ❯ \1\033[m\2"
 
-# sets the readline to display possible completions using different colors
-# to indicate filetypes determined from env variable LC_COLORS
+# LC_COLORS
 set colored-stats on
+set colored-completion-prefix on
 
-# Completions listed immediately instead of bell when completing word has more than one possible completion
-# note: this also allows for single tab completion (as opposed to requiring a double tab).
+# completion
 set show-all-if-ambiguous on
-
-# suffix each returned file completion with a character denoting its type, in a similar way to ls(1) with -F or --classify.
 set visible-stats on
-
-# turns off the use of the internal pager when returning long completion lists.
-set page-completions off
-
-# tab completion ignores case
 set completion-ignore-case on
 set menu-complete-display-prefix on
-
-# Enables the display of only the first 5 unique characters from a group of file or directory name suggestions when you utilize tab-completion.
-# If multiple entries share a long prefix, they will be condensed using ellipses, making it easier to locate and choose the desired item.
-# Useful in directories containing many similarly named images or documents.
+set completion-map-case on
+set show-all-if-ambiguous on
 set completion-prefix-display-length 5
+set page-completions off
 
 # Set the bell-style to be visible only i.e no audio played on command completion
 # can also be set to none
